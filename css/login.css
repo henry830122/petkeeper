@@ -1,0 +1,305 @@
+@import url(reset.css);
+
+[class|="col"]{
+	float: left; 
+	padding: 0 15px; 
+	box-sizing: border-box;
+}
+.container{
+	width: 100%;
+	max-width: 1200px;
+	margin:auto;
+}
+.container:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.row{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.row:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.col-1{ width: 8.333333%;}
+.col-2{ width: 16.666666%;}
+.col-3{ width: 25%;}
+.col-4{ width: 33.333333%;}
+.col-5{ width: 41.666666%;}
+.col-6{ width: 50%;}
+.col-7{ width: 58.333333%;}
+.col-8{ width: 66.666666%;}
+.col-9{ width: 75%;}
+.col-10{ width: 83.333333%;}
+.col-11{ width: 91.666666%;}
+.col-12{ width: 100%;}
+
+
+@media screen and (min-width: 768px){
+.col-md-1{ width: 8.333333%;}
+.col-md-2{ width: 16.666666%;}
+.col-md-3{ width: 25%;}
+.col-md-4{ width: 33.333333%;}
+.col-md-5{ width: 41.666666%;}
+.col-md-6{ width: 50%;}
+.col-md-7{ width: 58.333333%;}
+.col-md-8{ width: 66.666666%;}
+.col-md-9{ width: 75%;}
+.col-md-10{ width: 83.333333%;}
+.col-md-11{ width: 91.666666%;}
+.col-md-12{ width: 100%;}	
+}
+
+/*===登入===*/
+#login{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	/*background-color: rgba(0,0,0,.5);*/
+	z-index: 999;
+
+	animation: loginback 1s forwards;
+}
+
+@keyframes loginback {
+	0%{background-color: rgba(0,0,0,0);}
+	100%{background-color: rgba(0,0,0,.8);}
+}
+
+.loginbox{
+	margin: 20% auto;
+	background-color: #f8f8f8;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	border-radius: 10px;
+	overflow: hidden;
+
+	position: relative;
+
+	animation: boxone .6s;
+}
+
+@keyframes boxone {
+	0%{transform:scale(0);}
+	100%{transform:scale(1);}
+}
+
+#login-close{
+	position: absolute;
+	top: 2px;
+	right: 15px;
+	cursor: pointer;
+}
+
+h6{
+	width: 100%;
+	font-size: 24px;
+	background-color: #ffc342;
+	text-align: center;
+}
+
+.loginpic{
+	width: 100%;
+}
+
+.loginpic img{
+	display: block;
+	width: 100px;
+	margin: 25px auto 25px;
+}
+
+.loginbox span{
+	font-size: 20px;
+}
+
+.login-input{
+	width: 60%;
+	margin-bottom: 25px;
+}
+
+.login-input div{
+	display: flex;
+	justify-content: center;
+
+	margin-bottom: 15px;
+}
+
+.login-input div input{
+	width: 70%;
+	height: 30px;
+
+	border-radius: 5px;
+}
+
+#login-submit{
+	display: block;
+	width: 80%;
+	height: 40px;
+
+	font-size: 24px;
+	font-family: 'Noto Sans TC', 'Roboto Condensed', 'Roboto', sans-serif;
+	color: #fff;
+	line-height: 40px;
+
+	border: none;
+	border-radius: 5px;
+	background-color: #4a6e70;
+	
+	margin: 15px auto;
+}
+
+#login-submit:hover{
+	animation: hoverone 1s forwards;
+}
+
+@keyframes hoverone{
+	0%{
+		border-radius: 50%;
+		background-color:#fff;		
+	}
+	100%{
+		border-radius: 5px;
+		background-color: #114b5f;
+		color:#ffc342;	
+	}
+}
+
+#registeredbtn{
+	display: block;
+	width: 80%;
+	height: 40px;
+	border-radius: 5px;
+	line-height: 40px;
+	margin: auto;
+	text-align: center;
+}
+
+#registeredbtn:hover{
+	animation: hoverone 1s forwards;
+}
+
+@media screen and (min-width: 768px){
+	.loginbox{
+		margin: 5% auto;
+	}
+
+	#login-submit{
+		cursor: pointer;		
+	}
+
+	
+	#registeredbtn{
+		cursor: pointer;
+	}
+
+	
+}
+
+/*===登入結束===*/
+
+.registeredbox{
+	margin: 20% auto;
+	background-color: #f8f8f8;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	border-radius: 10px;
+	overflow: hidden;
+
+	position: relative;
+	animation: boxone .6s;
+}
+
+#registered-close{
+	position: absolute;
+	top: 2px;
+	right: 15px;
+	cursor: pointer;
+}
+
+.registeredbox h6{
+	margin-bottom: 25px;
+}
+
+.registeredsex{
+	width: 71%;	
+}
+
+.registeredsex input{
+	margin-left: 25px; 
+}
+
+#registered-submit{
+	display: block;
+	width: 80%;
+	height: 40px;
+
+	font-size: 24px;
+	font-family: 'Noto Sans TC', 'Roboto Condensed', 'Roboto', sans-serif;
+	color: #fff;
+
+	border: none;
+	border-radius: 5px;
+	background-color: #4a6e70;
+
+	
+	
+	margin: 15px auto;
+}
+
+#registered-submit:hover{
+	animation: hoverone 1s forwards;
+}
+@keyframes hoverone{
+	0%{
+		border-radius: 50%;
+		width:80%;
+		background-color:#fff;
+	}
+	100%{
+		border-radius: 5px;
+		width: 80%;
+		background-color: #114b5f;
+		color:#ffc342; 
+	}
+}
+
+.logInAlert{
+	font-size: 0.875rem;
+	text-align: center;
+	color: #f28123;
+}
+
+@media screen and (min-width: 768px){
+	.registeredbox{
+		margin: 5% auto;
+	}
+
+	#registered-submit{
+		cursor: pointer;
+	}
+
+}
+
+/**成為飼主 不要再刪掉！！！**/
+
+.disabled{
+	pointer-events: none !important;
+	cursor: default !important;
+	color: #c9c9c9 !important;
+	cursor:not-drop !important;
+	z-index:9999 !important;
+}

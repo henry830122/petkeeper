@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鏟屎官--成為飼主</title>
+    <!-- title的小logo -->
+    <link rel="icon" href="img/petKeepersIcon.ico" type="image/x-icon/" />
+    <!-- 以下的link不要刪掉 -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- 把自己負責頁面的css檔案link：css/fontStyle.css前，ex.css/shopStyle.css -->
+    <link rel="stylesheet" href="css/beAPetKeeperStyle.css">
+    <link rel="stylesheet" href="css/fontStyle.css" />
+    <link rel="stylesheet" href="css/header-footer.css" />
+    <link rel="stylesheet" href="css/col.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/login.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/burger.js"></script>
+    <!-- <script src="js/pethouse.js"></script> -->
+</head>
+
+<body>
+    <!-- 登入 -->
+    <div id="login" class="col-md-12" style="display: none;">
+        <!-- loginbox開始 -->
+        <div id="loginbox" class="loginbox col-md-5">
+            <h6>會員登入</h6>
+            <div class="loginpic">
+                <img src="img/logo-01.png" alt="">
+            </div>
+            <div class="login-input">
+                <div>
+                    <span>帳號:</span>
+                    <input type="text" id="memIdInput" maxlength="10">
+                </div>
+                <div>
+                    <span>密碼:</span>
+                    <input type="password" id="memPswInput" maxlength="10">
+                </div>
+                <input type="submit" value="送出" id="login-submit">
+                <span id="registeredbtn">還沒申請帳號?</span>
+            </div>
+            <span id="login-close">X</span>
+        </div><!-- loginbox結束 -->
+
+        <!-- registeredbox開始 -->
+        <div id="registeredbox" class="registeredbox col-md-5" style="display: none;">
+            <h6>會員註冊</h6>
+            <div class="login-input">
+                <div>
+                    <span>帳號:</span>
+                    <input type="text" name="mid" id="memIdValue" maxlength="10">
+                </div>
+                <div>
+                    <span>密碼:</span>
+                    <input type="password" name="mpsw" id="memPswValue" maxlength="10">
+                </div>
+                <div>
+                    <span>姓名:</span>
+                    <input type="text" name="mname" id="memNameValue" maxlength="10">
+                </div>
+                <div>
+                    <span>暱稱:</span>
+                    <input type="text" name="mnick" id="memNickValue" maxlength="10">
+                </div>
+                <div>
+                    <span>性別:</span>
+                    <div class="registeredsex">
+                        <input type="radio" name="sex" value="0" style="width: 20px;" checked>男
+                        <input type="radio" name="sex" value="1" style="width: 20px;">女
+                    </div>
+                </div>
+                <div>
+                    <span>信箱:</span>
+                    <input type="text" name="memail" id="memMailValue" maxlength="50">
+                </div>
+                <div>
+                    <span>手機:</span>
+                    <input type="text" name="mphone" id="memPhoneValue" maxlength="10">
+                </div>
+                <p class="logInAlert">※以上欄位都必須填寫</p>
+                <input type="submit" value="送出" id="registered-submit">
+            </div>
+            <span id="registered-close">X</span>
+        </div><!-- registeredbox結束 -->
+
+    </div><!-- 登入結束 -->
+    <header>
+        <div class="index-logo">
+            <div class="logo">
+                <a href="home.html"><img src="./img/logo.png" alt="" /></a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul class="menu-ul">
+                <li><a id="enterPethouse">寵物當家</a></li>
+                <li class="landPage"><a href="beAPetKeeper.html">成為飼主</a></li>
+                <li><a href="products.html">寵物商店</a></li>
+                <li><a href="activities.html">活動專區</a></li>
+                <div class="login">
+                    <div class="login-status">
+                        <a id="loginopenbtn">登入</a>
+                        <b>|</b>
+                        <a id="registeredopenbtn">註冊</a>
+                    </div>
+                </div>
+            </ul>
+        </div>
+        <div class="burger">
+            <span class="bar1" id="bar"></span>
+            <span class="bar2" id="bar"></span>
+            <span class="bar3" id="bar"></span>
+        </div>
+    </header>
+
+    <div class="pet-wrap">
+
+
+        <!-- banner-start -->
+        <div class="pet-container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 pet-banner-bgs">
+                    <img class="pet-banner-paper" src="./img/beAPetKeBanner.png" alt="">
+                    <div class="pet-banner">
+                        <img src="./img/beAPetKeBaBlue.png" alt="">
+                        <p>成為飼主</p>
+                    </div>
+                    <div class="pet-banner-pet">
+                        <img class="pet-banner-cat" src="./img/pet-banner-cat.png" alt="">
+                        <img class="pet-banner-dog" src="./img/pet-banner-dog.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- banner-end -->
+
+        <!-- 打造專屬寵物-title-start -->
+        <div class="pet-container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 pet-title">
+                    <p>打造專屬寵物</p>
+                </div>
+            </div>
+        </div>
+        <!-- 打造專屬寵物-title-end -->
+
+        <!---- 客製化-start ---->
+        <!-- 客製化左邊舞台展示-start -->
+        <div class="pet-container pet-section-one">
+            <div class="row Pet-Section">
+                <div class="col-sm-12 col-md-6  pet-customize pet-customize-pet pet-section-onebox ">
+                    <div class="pet-context">
+                        <!-- <img src="./img/bAPKStage.png" alt=""> -->
+                    </div>
+                    <!-- <div class="pet-light">
+                        <img src="./img/lightLeft.png" class="pet-light-left" alt="">
+                        <img src="./img/lightRight.png" class="pet-light-right" alt="">
+                    </div> -->
+
+                    <div class="pet-context-stage">
+                        <div class="pet-context-pet">
+                            <!-- <img src="./img/modelCaseDog.png" alt=""> -->
+                            <form action="" accept-charset="utf-8" id='f1' enctype="multipart/form-data">
+                                <input id='pp' type="hidden" name='petPic'>
+                            </form>
+
+                            <canvas id="pet-canvas" width="330px" height="200px" hidden></canvas>
+                            <div class="pet-model Pets-Color" id="Pet-DogKeeper">
+                                <img class="pet-dress-head" src="./backStage/images/pet-stage-dogheadfirst.png"
+                                    alt="" id="Pet-HeadDog-One">
+                                <img class="pet-dress-body" src="./backStage/images/pet-stage-dogbody.png" alt=""
+                                    id="Pet-BabyDog-One">
+                                <img class="pet-dress-tail" src="./backStage/images/pet-stage-dogtailfirst.png"
+                                    alt="" id="Pet-TailDog-One">
+                                <img id="p" src="" alt="">
+                            </div>
+
+                            <!-- <div class="pet-model Pets-Color" id="Pet-DogKeeper">
+                        <img src="./img/pet-stage-catheadfirst.png" alt="">
+                        <img src="./img/pet-stage-catbody.png" alt="" class="">
+                        <img src="./img/pet-stage-cattailsencon.png" alt="">
+                    </div> -->
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 客製化左邊舞台展示-end -->
+
+                <!-- 右側三步驟-start -->
+                <div class="col-sm-12 col-md-6 pet-box pet-section-onebox">
+                    <div class="" id="Pet-div1">
+                        <!-- 三步驟-start -->
+                        <ul class="pet-step-all">
+                            <li class="pet-active"><a href="#pet-stepone">第一步</a></li>
+                            <li class="pet-active"><a href="#pet-steptwo">第二步</a></li>
+                            <li class="pet-active"><a href="#pet-stepthree">第三步</a></li>
+                        </ul>
+                        <!-- 三步驟-end-->
+                        <!-- Step1選擇動物-start -->
+                        <div class="Pet-Content" id="pet-stepone" style="display:block">
+                            <img src="./img/pet-step1-dog.png" alt="" class="Pet-Step-OneDog">
+                            <img src="./img/pet-step1-cat.png" alt="" class="Pet-Step-OneCat">
+
+                            <button class="Pet-Stepone-DogBtn Pet-Stepone-Btn" value="dog">成為狗奴</button>
+                            <button class="Pet-Stepone-CatBtn Pet-Stepone-Btn" value="cat">成為貓奴</button>
+
+                            <button class="Pet-StepOne-Test" value="測試">測試適合成為狗奴還是貓奴</button>
+                            <!-- 
+                            <p>選擇系統推薦的寵物，會獲得更多愛心幣噢！</p> -->
+                        </div>
+                        <!-- Step1選擇動物-end -->
+
+                        <!-- Step2第二步替換部位-start -->
+                        <div class="Pet-Content pet-select" id="pet-steptwo">
+                            <div class="pet-dogheads">
+                                <p class="pet-doghead-two">頭部</p>
+                                <div class="pet-dogheads-pic"></div>
+                            </div>
+                            <div class="pet-dogtails">
+                                <p class="pet-dogtail-two">尾巴</p>
+                                <div class="pet-dogtails-pic"></div>
+                            </div>
+                        </div>
+                        <!-- Step2第二步替換部位-end -->
+
+                        <!-- Step3選顏色-start-->
+
+                        <div class="Pet-Content pet-color pet-stepthree-color" id="pet-stepthree">
+                            <p class="pet-color-pick">選擇顏色</p>
+
+                            <input type="range" class="pet-color-bar create-colorbar" min="0" max="360" step="1"
+                                value="0" ; -webkit-appearance: none;background-image: linear-gradient(to right, #F00,
+                                #FF0, #0F0, #0FF, #00F, #F0F, #F00);>
+                            <p class="pet-color-name">寵物暱稱</p><br>
+                            <form action="" method="">
+                                <input type="text" class="pet-name" required>
+                            </form>
+                            <input type="button" value="確定完成" name="" class="pet-stepthree-Ok">
+
+                        </div>
+                        <!-- Step3選顏色-end-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 客製化-end -->
+
+
+        <!-- 第二畫面QA-start -->
+
+        <div class="pet-container pet-section-two">
+            <div class="row pet-section-qa">
+                <div class="col-sm-12 col-md-4 ">
+                    <div class="pet-unknown">
+                        <img src="./img/pet-unknown.png" alt="">
+                        <img class="pet-unknown-pet" src="./img/pet-test-catfirst.png" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-8 pet-question">
+                    <img src="./img/pet-qa-paper.png" alt="">
+
+                    <div class="pet-qa-answer">
+                        <p class="pet-question-title">你適合當狗奴還是貓奴？</p>
+                        <div class="pet-question-number">
+                            <img class="" src="./img/pet-circle-1.png" alt="">
+                        </div>
+                        <p class="pet-qa-title">Q1.請問您的居住空間？</p>
+                        <div class="pet-answer-btn">
+                            <button class="pet-answer" id="SSS" value="cat">小坪數套房</button>
+                            <button class="pet-answer" value="dog">透天</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 第二畫面QA-end -->
+        <!-- 第三頁-QA結束打造寵物頁面-start -->
+        <div class="pet-container pet-section-three">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 pet-dress-answer">
+                    <p>您適合養</p>
+                    <img class="pet-dress-paper" src="./img/pet-dress-paper.png" alt="">
+
+                    <div class="pet-dress-pet">
+                        <img class="pet-dress-head" src="./backStage/images/pet-stage-dogheadfirst.png">
+                        <img class="pet-dress-body" src="./backStage/images/pet-stage-dogbody.png">
+                        <img class="pet-dress-tail" src="./backStage/images/pet-stage-dogtailfirst.png">
+                    </div>
+                    <button class="pet-dress">去打造你的寵物</button>
+                </div>
+            </div>
+        </div>
+        <!-- 第三頁-QA結束打造寵物頁面-end-->
+
+        <!-- 第四頁-客製動物完成-start -->
+        <div class="pet-container pet-section-four">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 pet-answer-pet">
+                    <p></p>
+                    
+                    <img class="pet-dress-paper" src="./img/pet-dress-paper.png" alt="">
+                   
+                    <div class="pet-dress-pet">      
+                        <img id='pet-pet' src="">
+                    </div>
+                    <div class="pet-dress-love">恭喜獲得500愛心幣與2包飼料!!</div>
+                    
+                    <div class="pet-go">
+                        <a href="./products.html"class="pet-go-shop">前往商店</a>
+                        <a href="./pethouse.html" class="pet-go-keeper">開始飼養</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 第四頁-客製動物完成-end-->
+    
+    <!-- footer-start-->
+    <footer>
+        <p>Copyright © 2019 PetKeepers</p>
+    </footer>
+    <!-- footer-end-->
+</div>
+
+
+
+
+
+    <!------------------------------------------ js-start ------------------------------------------>
+    <!-------------------- 頁面切換-start -------------------->
+    <script>
+        $('#Pet-div1 ul li').click(function () {
+            $($(this).find('a').attr('href')).show().siblings('.Pet-Content').hide(); //頁面內容
+            $(this).addClass('pet-active-step').siblings('.pet-active-step ').removeClass(
+                'pet-active-step'); //步驟顏色
+        });
+    </script>
+    <!-------------------- 頁面切換-end ------------------------>
+
+    <!-------------------- 左側動物顯示-start -------------------->
+    <script>
+        var pet = 'dog';
+        var dog = 0;
+        var cat = 0;
+        var number = 0; //題號
+        var arr = [
+            ['./img/pet-circle-1.png', 'Q1.請問您的居住空間？', '小坪數套房', '透天'],
+            ['./img/pet-circle-2.png', 'Q2.請問您居住的空間大小？', '只夠自己住', '地方較大'],
+            ['./img/pet-circle-3.png', 'Q3.請問您比較喜歡在家裡還是戶外？', '在家', '戶外'],
+            ['./img/pet-circle-4.png', 'Q4.請問您願意每個月為寵物花費多少錢？', '3000元以內', '3000元以上'],
+            ['./img/pet-circle-5.png', 'Q5.請問您生活環境的清潔狀態?？', '潔癖', '不拘小節'],
+        ];
+        var petArr = new Array(4); //動物部位三個元素+顏色
+        var petUnknown = ['./img/pet-test-catfirst.png', './img/pet-test-catsencon.png', './img/pet-test-dogfirst.png',
+            './img/pet-test-dogsencon.png'
+        ];
+        
+        if(window.location.search.indexOf("petType"))
+        {
+            homeCmd = window.location.search.split("=")[1];
+        }
+        
+        $(document).ready(function () {   
+            if(homeCmd){
+                switchStep(2);
+                set(homeCmd);
+                show();
+            }else{
+                switchStep(1);
+                set('dog');
+            }
+            
+            //第一步
+            $('.pet-answer').click(function () {
+                //step1.偵測答案根據狗或貓 step2.加分
+                if ($(this).val() == 'cat') {
+                    cat++;
+                } else {
+                    dog++;
+                }
+                number++; //step3.換題
+                if (number < 5) {
+
+                    $('.pet-question-number img').prop('src', arr[number][0]);
+                    $('.pet-qa-title').text(arr[number][1]);
+                    $('#SSS').text(arr[number][2]);
+                    $('.pet-answer:last-child').text(arr[number][3]);
+                } else {
+                    if (cat > dog) {
+                        set('cat');
+                        show();
+                    } else {
+
+                        set('dog');
+                        show();
+                    }
+                    $('.pet-section-two').hide();
+                    $('.pet-section-three').show();
+                }
+            });
+
+            //不答題左側動物顯示-start
+            $('#Pet-DogKeeper').show();
+            $('.Pet-Stepone-DogBtn').click(function () {
+
+                set('dog');
+                show();
+            });
+
+            $('.Pet-Stepone-CatBtn').click(function () {
+                set('cat');
+                show();
+            });
+            $('.Pet-StepOne-Test').click(function () {
+
+                setInterval(function () {
+                    $('.pet-unknown-pet').prop('src', petUnknown[Math.floor(Math.random() *
+                        3)]); //進來都隨機出現
+
+                }, 1000);
+                $('.pet-section-one').hide();
+                $('.pet-section-three').hide();
+                $('.pet-section-two').show();
+            });
+
+            ////////////////////////////////////////////左側動物顯示-end
+
+
+
+            ////////////////////////////////////////////第二步替換部位-star
+
+
+            //替換頭
+            $(document).on('click', '.pet-dogheads-pic img', function () {
+                let index = $(this).index()
+                if (pet == 'dog') {
+                    set(null, $('.pet-dogheads-pic p').eq(index / 2).text());
+                    show();
+
+                    return;
+                }
+                set(null, $('.pet-dogheads-pic p').eq(index / 2).text());
+                show();
+            });
+
+            //替換尾巴
+            $(document).on('click', '.pet-dogtails-pic img', function () {
+                let index = $(this).index()
+                if (pet == 'dog') {
+                    set(null, null, $('.pet-dogtails-pic p').eq(index / 2).text());
+                    show();
+
+                    return;
+                }
+                set(null, null, $('.pet-dogtails-pic p').eq(index / 2).text());
+                show();
+            });
+
+
+            /////第三部確定送出
+            $('.pet-stepthree-Ok').click(function () {
+                if ($('.pet-name').val() === "") {
+                    alert("請輸入暱稱");
+                    return;
+                }
+                if (window.sessionStorage.getItem('memId') === null) {
+                    $('#loginopenbtn').trigger('click');
+                    return;
+                }
+                drawPet(pet, petArr[3]);
+            });
+        });
+        
+        ///////////////////////////////////////////////// 輸入部位值  QA結束打造寵物頁面與第二步
+        function set(petType, head = null, tail = null, color = null) { //petType:狗貓種類
+            if (petType !== null) {
+                loadPetComponents(petType);
+                pet = petType;
+
+                if (pet == 'dog') {
+                    petArr[0] = './backStage/images/pet-stage-dogheadfirst.png';
+                    petArr[1] = './backStage/images/pet-stage-dogbody.png';
+                    petArr[2] = './backStage/images/pet-stage-dogtailfirst.png';
+                    petArr[3] = -1;
+                    $('.Pets-Color').css('filter', 'none');
+                    return;
+                }
+
+                petArr[0] = './backStage/images/pet-stage-catheadfirst.png';
+                petArr[1] = './backStage/images/pet-stage-catbody.png';
+                petArr[2] = './backStage/images/pet-stage-cattailfirst.png';
+                petArr[3] = -1;
+                $('.Pets-Color').css('filter', 'none');
+                return;
+            }
+
+            if (head !== null) {
+                petArr[0] = head;
+            }
+
+            if (tail !== null) {
+                petArr[2] = tail;
+            }
+            if (color !== null) {
+                petArr[3] = color;
+            }
+
+        }
+
+        //helper functions
+        //////////////////////////////////////////////////讀取寵物元件
+        function loadPetComponents(petType) {
+            $('.pet-dogheads-pic').text("");
+            $('.pet-dogtails-pic').text("");
+
+            $.ajax({
+                type: 'get',
+                data: {
+                    'petType': petType
+                },
+                url: './php/beApetKeeper.php',
+                success: function (data) {
+                    if (data.error) {
+                        alert(data.error.msg);
+                    } else {
+                        $.each(data, function (index, element) {
+                            loadComponents(element);
+                        });
+                    }
+                },
+                error: function (req, status, error) {
+                    alert("系統錯誤");
+                    // location.reload();
+                }
+            });
+        }
+
+        function loadComponents(components) {
+            // console.log(components.elePic);
+            if (components.elePic.includes("head")) {
+                $('.pet-dogheads-pic').append("<img src=" + components.elePic.replace("/backStage/images", "/img")
+                    .replace("stage", "step2") + ">");
+                $('.pet-dogheads-pic').append("<p hidden>" + components.elePic + "</p>");
+            } else {
+                $('.pet-dogtails-pic').append("<img src=" + components.elePic.replace("/backStage/images", "/img")
+                    .replace("stage", "step2") + ">");
+                $('.pet-dogtails-pic').append("<p hidden>" + components.elePic + "</p>");
+            }
+        }
+        ///////////////////////////////////////////////// 做完題目顯示寵物
+        function show() {
+            $('.pet-dress-head').prop('src', petArr[0]);
+            $('.pet-dress-body').prop('src', petArr[1]);
+            $('.pet-dress-tail').prop('src', petArr[2]);
+
+        }
+
+        function drawPet(pet, color) {
+
+            let canvas = document.getElementById("pet-canvas");
+            let ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            let img1 = new Image();
+            let img2 = new Image();
+            let img3 = new Image();
+            img1.src = document.getElementById("Pet-HeadDog-One").src;
+            img2.src = document.getElementById("Pet-BabyDog-One").src;
+            img3.src = document.getElementById("Pet-TailDog-One").src;
+
+            img1.onload = function () {
+                ctx.drawImage(img1, 0, 0);
+                ctx.drawImage(img2, 0, 0);
+                ctx.drawImage(img3, 0, 0);
+            }
+
+            img2.onload = function () {
+                ctx.drawImage(img1, 0, 0);
+                ctx.drawImage(img2, 0, 0);
+                ctx.drawImage(img3, 0, 0);
+            }
+
+            img3.onload = function () {
+                ctx.drawImage(img1, 0, 0);
+                ctx.drawImage(img2, 0, 0);
+                ctx.drawImage(img3, 0, 0);
+            }
+
+            setTimeout(function () {
+                savePet(pet, color);
+            }, 10);
+
+        }
+
+
+        function savePet(pet, color) {
+
+            var canvas = document.getElementById("pet-canvas");
+            var dataURL = canvas.toDataURL("image/png");
+
+            $('#pp').val(dataURL);
+            var formData = new FormData(document.getElementById("f1"));
+            formData.append('petName', $('.pet-name').val());
+            formData.append('petType', pet);
+            formData.append('petColor', color);
+
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    if (xhr.responseText == "error") {
+                        alert("系統錯誤");
+                    } else {
+                        var data = xhr.responseText;
+                        var jsonResponse = JSON.parse(data);
+
+                        $('.pet-answer-pet p').text(jsonResponse["petName"]);
+                        window.sessionStorage.setItem('petName', jsonResponse["petName"]);
+                        $('#pet-pet').prop('src', jsonResponse["petPic"]);
+                        $('#pet-pet').css('filter', 'hue-rotate(' + jsonResponse["petColor"] + 'deg)');
+                        
+                        $('.pet-section-one').hide();
+                        $('.pet-section-four').show();
+                    }
+                } else {
+                    alert(xhr.status)
+                }
+            }
+
+            xhr.open('POST', './php/beApetKeeper.php', true);
+            xhr.send(formData);
+        }
+
+        //切換步驟
+        function switchStep(stepNumber)
+        {
+            $('#Pet-div1 ul li:nth-child('+stepNumber+')>a').trigger('click');
+        }
+    </script>
+
+    <!-------------------- 第三頁-QA結束打造寵物頁面-start -------------------->
+    <script>
+        $(document).ready(function () {
+            //    alert($('li:nth-child(2)>a').text());
+            $('.pet-dress').click(function () {
+                $('.pet-section-three').hide();
+                $('.pet-section-one').show();
+                $('#Pet-div1 ul li:nth-child(2)>a').trigger('click');
+
+            });
+        });
+    </script>
+    <!-------------------- 第三頁-QA結束打造寵物頁面-end -------------------->
+
+
+    <!-------------------- 第三步color-bar -start ------------------------>
+    <script>
+        $(document).ready(function () {
+            $('.create-colorbar').change(function () {
+                // console.log(petArr);
+                $('.Pets-Color').css('filter', 'hue-rotate(' + $(this).val() + 'deg)');
+                set(null, null, null, $(this).val());
+            });
+        });
+    </script>
+    <!------------------------- 第三步color- bar - end ------------------------->
+</body>
+
+</html>

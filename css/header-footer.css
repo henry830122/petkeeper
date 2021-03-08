@@ -1,0 +1,330 @@
+/*---------開始--------------手機設定*/
+
+.menu-ul {
+    display: none;
+    /* width: 0; */
+}
+
+.login {
+    text-align: center;
+}
+
+.login-icon {
+    display: none;
+}
+
+header {
+    background-color: #4a6e70;
+    /* height: 10vh; */
+    font-weight: bold;
+    font-size: 20pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 889;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.index-logo {
+    /* z-index: 2; */
+    width: 30%;
+    padding: 0 10px 0 0;
+    border-radius: 0 0 15px;
+    background-color: #fff;
+    padding-left: 3px;
+}
+
+
+.logo img {
+    width: 100%;
+}
+
+.menu-show {
+    display: block;
+    position: fixed;
+    z-index: 800;
+    top: 0;
+    right: 0;
+    width: 0;
+    min-height: 100vh;
+    background-color: #4a6e70;
+    animation: menu-ani .4s .2s both;
+    transition: all .4s .2s;    
+}
+@keyframes menu-ani{
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+/*--------開始--------手機漢堡設定-------*/
+.burger {
+    width: 40px;
+    height: 40px;
+    z-index: 900;
+    position: relative;
+    right: 2%;
+}
+/* *{
+    outline: 1px solid #ff0000;
+} */
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #ffc342;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; 
+    border-radius: 5px;
+}
+.burger .bar1 {
+    top: -60%;
+}
+.burger .bar3 {
+    top: 60%;
+}
+
+
+.rotate #bar {
+    color: #fff;
+}
+
+.rotate .bar1 {
+    top: 0;
+    transform: rotate(-315deg);
+    transition: transform .8s,
+    top .3s;
+}
+
+.rotate .bar2 {    
+    transform: translateX(200%);
+    transition: transform .8s;
+}
+
+.rotate .bar3 {
+    top: 0;
+    transform: rotate(-225deg) ;
+    transition: transform .8s,
+    top .3s;
+}
+
+
+/*--------結束--------手機漢堡設定-------*/
+
+
+/*開始---手機選單*/
+.menu-show li {
+    text-align: center;
+    margin: 50px 0;
+    width: 100%;
+}
+
+.menu-show a {
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+/*結束---手機選單*/
+
+
+/* 開始--頁尾 */
+footer {
+    width: 100%;
+    font-size: 1rem;
+    background-image: url(../img/footerbg.png);
+    padding: 10px 0;
+    position: relative;
+}
+
+footer p {
+    text-align: center;
+    color: #fff;
+}
+
+/* 結束--頁尾 */
+
+/* 提醒的貓 手機時隱藏*/
+.prompt {
+    position: absolute;
+    position: fixed;
+    right: 2%;
+    bottom: 1%;
+    width: 10%;
+    height: 10%;
+    z-index: 500;
+}
+
+.prompt a img:nth-child(1) {
+    display: none;
+    position: relative;
+}
+
+.prompt a img:nth-child(2) {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 3px;
+    box-shadow: 0 0 5px 3px #cbcbcb;
+}
+
+/*---------結束--------------手機設定*/
+
+
+/* 開始     這個 space 是為了隔開header與footer,在實作時請移除 */
+.space {
+    height: 2000px;
+}
+
+/* 結束     這個 space 是為了隔開header與footer,在實作時請移除 */
+
+
+
+
+
+/*---------開始--------------桌機 header 設定*/
+/*桌機 header 設定，此為header設定的寬度，各自頁面請各自設定寬度*/
+@media screen and (min-width: 997px) {
+    header {
+        margin-left: 0;
+        border-top: 10px solid #fff;
+        border-left: 10px solid #fff;
+        border-right: 10px solid #fff;
+    }
+
+    .wrap {
+        border: 10px solid #fff;
+        overflow: hidden;
+    }
+
+    .index-logo {
+        width: 15%;
+        border-radius: 0 0 15px;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 100%;
+        display: block;
+    }
+
+
+    /* ----------開始-----桌機選單設定-------------- */
+    .menu {
+        display: flex;
+    }
+
+    .menu-ul {
+        display: flex;
+        align-items: center;
+        margin-right: 50px;
+    }
+
+    .menu a {
+        color: #fff;
+        transition: all .3s;
+        cursor: pointer;
+    }
+
+    .menu a:hover {
+        color: #ffc342;
+        transition: all .3s;
+    }
+
+    .menu-ul li {
+        margin-right: 25px;
+    }
+
+
+    /* ----------結束-----桌機會員設定-------------- */
+
+
+
+    /* ----------開始-----桌機會員設定-------------- */
+    .login {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .login-icon {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-color: #114b5f;
+        text-align: center;
+        border-radius: 50%;
+        transition: all .3s;
+    }
+
+    /* .login-icon:hover {
+        background-color: #ffc342;
+        transition: all .3s;
+    } */
+
+    .login-status {
+        font-size: 16px;
+        margin: 5px 0 0 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .login-status b {
+        color: #fff;
+    }
+
+    /* ----------結束-----桌機會員設定-------------- */
+
+
+
+    /*桌機漢堡隱藏*/
+    .burger {
+        display: none;
+    }
+
+
+
+    /*----------開始------提醒的貓-桌機時顯示--------*/
+    footer {
+        padding: 30px 0;
+    }
+
+    .prompt a img:nth-child(1) {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .prompt img {
+        width: 100%;
+    }
+
+    .prompt a img:nth-child(2) {
+        display: none;
+    }
+
+    /*----------結束------提醒的貓-桌機時顯示--------*/
+}
+
+.landPage a {
+    color: #ffc342;
+}
+
+/*---------桌機--------------桌機 header 設定*/

@@ -1,0 +1,470 @@
+@import url("reset.css");
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto|Roboto+Condensed&display=swap');
+
+/**** 共用設定-start *****/
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid red; */
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    font-family: 'Noto Sans TC';
+    text-decoration: none;
+}
+
+
+/**** 共用設定-end *****/
+@media screen and (min-width: 997px) {
+    .guide-wrap {
+        border: 10px solid #fff;
+        overflow: hidden;
+    }
+}
+
+/**** 導引頁-start *****/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.guide-backgrand {
+    background-image: url(../img/guide-backgrand-house.png);
+    background-color: #eff1f3;
+    width: 100%;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+.guide-flag {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.guide-flag {
+    width: 100%;
+}
+
+.guide-flag-bottonright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0 9% 0 22%;
+}
+
+.guide-botton-right {
+    color: #fff;
+    font-size: 80px;
+    width: 5%;
+    position: absolute;
+    z-index: 10;
+    margin: -8.5% 0% 0% 4%;
+    cursor: pointer;
+}
+
+.guide-cloud {
+    margin: 2% 0;
+}
+
+.guide-cloud-one {
+    margin: 1% 8%;
+    width: 8%;
+    height: 6%;
+}
+
+.guide-cloud-three {
+    margin: 1% 11%;
+}
+
+.guide-cloud-two {
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 8%;
+    height: 6%;
+    animation: guide-cloud-two 30s infinite;
+    animation-direction: alternate;
+
+}
+
+@keyframes guide-cloud-two {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100px;
+    }
+}
+
+.guide-cloud-four {
+    position: absolute;
+    left: 0;
+    width: 9%;
+    animation: guide-cloud-four 25s infinite;
+    animation-direction: alternate;
+
+}
+
+@keyframes guide-cloud-four {
+    from {
+        left: 40%
+    }
+
+    to {
+        left: 20%;
+    }
+}
+
+.guide-cloud-five {
+    position: absolute;
+    left: 50%;
+    top: 12%;
+    width: 11%;
+    animation: guide-cloud-five 25s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes guide-cloud-five {
+    from {
+        left: 60%
+    }
+
+    to {
+        left: 90%;
+    }
+}
+
+.guide-pet {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    position: absolute;
+    z-index: 4;
+    top: 60%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.guide-dog-first {
+    position: absolute;
+    z-index: -222;
+    top: 12%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.guide-pet-cat {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    position: absolute;
+    z-index: 40;
+    top: 45%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.guide-dog-sencon {
+    position: absolute;
+    z-index: 300;
+    top: -2%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin-left: 1%;
+    width: 15%;
+}
+
+.guide-dog-first {
+    width: 10%;
+    animation: guide-dog-first 10s linear infinite;
+    animation-fill-mode: both;
+}
+
+.guide-dog-sencon {
+    animation: guide-dog-sencon 6s infinite;
+}
+
+@keyframes guide-dog-first {
+    from {
+        margin-top: 60px;
+        left: 100%;
+    }
+
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95% {
+        margin-top: 40px;
+        transform: scale(1);
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90% {
+        margin-top: 60px;
+    }
+
+    99% {
+        opacity: 1;
+    }
+
+    to {
+        margin-top: 60px;
+        left: 0%;
+        opacity: 0;
+    }
+}
+
+@keyframes guide-dog-sencon {
+    from {
+        margin-top: 100px;
+        left: 0%;
+    }
+
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95% {
+        margin-top: 50px;
+        transform: scale(1);
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90% {
+        margin-top: 70px;
+    }
+
+    to {
+        margin-top: 100px;
+        left: 100%;
+    }
+}
+
+
+
+.guide-cat-sencon {
+    margin-left: 0%;
+}
+
+.guide-pet-cat {
+    position: absolute;
+    left: 0%;
+    top: 54%;
+
+    /* animation: guide-cat-first 60s infinite; */
+
+}
+
+.guide-cat-first {
+    position: absolute;
+    left: -2%;
+    top: 44%;
+    animation: guide-cat-first 3s infinite;
+}
+
+.guide-cat-sencon {
+    position: absolute;
+    left: 0%;
+    top: 47%;
+    animation: guide-cat-first 5s infinite;
+}
+
+@keyframes guide-cat-first {
+    from {
+        margin-top: 100px;
+        left: 0%;
+    }
+
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95% {
+        margin-top: 50px;
+        transform: scale(1);
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90% {
+        margin-top: 70px;
+    }
+
+    to {
+        margin-top: 100px;
+        left: 100%;
+    }
+}
+
+
+
+@keyframes guide-cat-sencon {
+    from {
+        margin-top: 40px;
+        left: 0%;
+    }
+
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95% {
+        margin-top: 40px;
+        transform: scale(1);
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90% {
+        margin-top: 60px;
+    }
+
+    to {
+        margin-top: 400px;
+        left: 100%;
+    }
+}
+
+/**** 手機版導引頁-start *****/
+@media screen and (max-width:768px) {
+
+    .guide-backgrand {
+        background-image: url(../img/guide-phone-house.png);
+        width: 100%;
+        background-size: cover;
+        height: 100vh;
+        position: relative;
+        background-repeat: no-repeat;
+        overflow-y:hidden;
+    }
+
+    .guide-flag img {
+        width: 200%;
+    }
+    .guide-flag  {
+        margin: 150% -11%;
+    }
+
+    .guide-pet img,
+    .guide-pet-cat img {
+        width: 50%;
+    }
+
+.guide-botton-right {
+    font-size: 60px;
+    margin: -23% 8%;
+   
+}
+.guide-dog-first{
+    display: none;
+}
+.guide-cloud-five {
+    left: 60%;
+    top: 16%;
+    width: 73%;
+    
+}
+}
+
+
+
+/**** 手機版導引頁-end *****/
+
+/**** 導引頁-end *****/

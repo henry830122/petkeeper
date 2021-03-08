@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>鏟屎官</title>
+  <!-- title的小logo -->
+  <link rel="icon" href="img/petKeepersIcon.ico" type="image/x-icon/" />
+  <!-- 以下的link不要刪掉 -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <!-- 把自己負責頁面的css檔案link：css/fontStyle.css前，ex.css/shopStyle.css -->
+  <link rel="stylesheet" href="css/fontStyle.css" />
+  <link rel="stylesheet" href="css/header-footer.css" />
+  <link rel="stylesheet" href="css/loadingPage.css">
+  <link rel="stylesheet" href="css/rankingStyle.css">
+  <link rel="stylesheet" href="css/index-ph-style.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/beAPetKeeperStyle.css">
+  <link rel="stylesheet" href="css/col.css">
+  <link rel="stylesheet" href="css/ph-style.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/home.css" />
+  <script src=" js/jquery-3.4.1.min.js"> </script>
+  <script src="js/loading.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js\burger.js"></script>
+  <script src="js/pethouse.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="./js/showAllprod.js"></script>
+</head>
+
+<body>
+  <!-- loaddingPage -->
+  <div id="loading">
+    <div class="loadingWrap">
+      <div class="loading-top">
+        <div class="logoLeft">
+          <object data="img/left_left.svg" type="image/svg+xml" id="logo_left_left"></object>
+          <object data="img/left_right.svg" type="image/svg+xml" id="logo_left_right"></object>
+        </div>
+        <div class="logoRight">
+          <object data="img/rigth.svg" type="image/svg+xml"></object>
+        </div>
+      </div>
+      <div class="loading-bottom">
+        <div class="bottomWrap">
+          <span class="loadingTextAlph">LOADING...</span>
+          <span class="loadingTextAlph" id="loadingPercent">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 登入 -->
+  <div id="login" class="col-md-12" style="display: none;">
+    <!-- loginbox開始 -->
+    <div id="loginbox" class="loginbox col-md-5">
+      <h6>會員登入</h6>
+      <div class="loginpic">
+        <img src="img/logo-01.png" alt="">
+      </div>
+      <div class="login-input">
+        <div>
+          <span>帳號:</span>
+          <input type="text" id="memIdInput" maxlength="10">
+        </div>
+        <div>
+          <span>密碼:</span>
+          <input type="password" id="memPswInput" maxlength="10">
+        </div>
+        <input type="submit" value="送出" id="login-submit">
+        <span id="registeredbtn">還沒申請帳號?</span>
+      </div>
+      <span id="login-close">X</span>
+    </div><!-- loginbox結束 -->
+
+    <!-- registeredbox開始 -->
+    <div id="registeredbox" class="registeredbox col-md-5" style="display: none;">
+      <h6>會員註冊</h6>
+      <div class="login-input">
+        <div>
+          <span>帳號:</span>
+          <input type="text" name="mid" id="memIdValue" maxlength="10">
+        </div>
+        <div>
+          <span>密碼:</span>
+          <input type="password" name="mpsw" id="memPswValue" maxlength="10">
+        </div>
+        <div>
+          <span>姓名:</span>
+          <input type="text" name="mname" id="memNameValue" maxlength="10">
+        </div>
+        <div>
+          <span>暱稱:</span>
+          <input type="text" name="mnick" id="memNickValue" maxlength="10">
+        </div>
+        <div>
+          <span>性別:</span>
+          <div class="registeredsex">
+            <input type="radio" name="sex" value="0" style="width: 20px;" checked>男
+            <input type="radio" name="sex" value="1" style="width: 20px;">女
+          </div>
+        </div>
+        <div>
+          <span>信箱:</span>
+          <input type="text" name="memail" id="memMailValue" maxlength="50">
+        </div>
+        <div>
+          <span>手機:</span>
+          <input type="text" name="mphone" id="memPhoneValue" maxlength="10">
+        </div>
+        <p class="logInAlert">※以上欄位都必須填寫</p>
+        <input type="submit" value="送出" id="registered-submit">
+      </div>
+      <span id="registered-close">X</span>
+    </div><!-- registeredbox結束 -->
+
+  </div><!-- 登入結束 -->
+  <header>
+    <div class="index-logo">
+      <div class="logo">
+        <a href="home.html"><img src="./img/logo.png" alt="" /></a>
+      </div>
+    </div>
+    <div class="menu">
+      <ul class="menu-ul">
+        <li><a id="enterPethouse">寵物當家</a></li>
+        <li><a href="beAPetKeeper.html">成為飼主</a></li>
+        <li><a href="products.html">寵物商店</a></li>
+        <li><a href="activities.html">活動專區</a></li>
+        <div class="login">
+          <div class="login-status">
+            <a id="loginopenbtn">登入</a>
+            <b>|</b>
+            <a id="registeredopenbtn">註冊</a>
+          </div>
+        </div>
+      </ul>
+    </div>
+    <div class="burger">
+      <span class="bar1" id="bar"></span>
+      <span class="bar2" id="bar"></span>
+      <span class="bar3" id="bar"></span>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="index-pethouse">
+      <!--------------------------------- 背包checkBox --------------------------------->
+      <input type=" checkbox" id="bagPag-control">
+      <!--------------------------------- 寵物家 開始 --------------------------------->
+      <div class="ph-hs-sw ph-check">
+        <div id="con" class="pethouse-autoplay">
+          <div class="item item1">
+            <div class="contain">
+              <p><img src="img/mouse.png" alt="" class="mouse">你的名稱、寵物名稱與愛心幣都在這兒!</p>
+            </div>
+          </div>
+          <div class="item item2">
+            <div class="contain">
+              <p><img src="img/mouse.png" alt="" class="mouse">想按這裡可以回家。</p>
+            </div>
+          </div>
+          <div class="item item3">
+            <div class="contain">
+              <p><img src="img/mouse.png" alt="" class="mouse">按這裡可以餵飼料。</p>
+            </div>
+          </div>
+          <div class="item item4">
+            <div class="contain">
+              <p><img src="img/mouse.png" alt="" class="mouse">按這裡可以鏟屎。</p>
+            </div>
+          </div>
+          <div class="item item5">
+            <div class="contain">
+              <p><img src="img/mouse.png" alt="" class="mouse">寵物的食盆。要記得餵食寵物喔。</p>
+            </div>
+          </div>
+          <div class="item item6">
+            <div class="contain">
+              <p><img src="img/mouse.png" alt="" class="mouse">寵物的屎盆。要記得定期清理喔。</p>
+            </div>
+          </div>
+          <div class="item item7">
+            <div class="contain">
+              <p><img src="img/mouse.png" alt="" class="mouse">這扇門可以去參觀別人家，還有賺取愛心幣的小遊戲喔。</p>
+            </div>
+          </div>
+          <div class="item item8">
+            <div class="contain">
+              <p><img src="img/mouse.png" alt="" class="mouse">到別人家會有這個保險箱，會有神秘小遊戲喔。</p>
+            </div>
+          </div>
+        </div>
+        <div class="ph-all">
+          <div class="ph-bgi">
+            <img src="img/house.png" alt="bgi">
+          </div>
+          <div class="ph-dr ph-all-style">
+            <img class="ph-dr-cl" src="img/door-close.png" alt="dr-op">
+            <img class="ph-dr-op" src="img/door-open.png" alt="dr-cl">
+          </div>
+          <div class="pet-img ph-all-style">
+            <img src="img/ph-cat.png" alt="pet">
+          </div>
+          <div class="pet-img ph-all-style">
+            <img src="img/ph-dog.png" alt="pet">
+          </div>
+          <div class="ph-st-box ph-all-style">
+            <img class="ph-st-full" src="img/shitbox-full.png" alt="shitbox-full">
+            <img class="ph-st-no" src="img/shitbox.png" alt="shitbox">
+          </div>
+          <div class="ph-fd-box ph-all-style">
+            <img class="ph-fd-no" src="img/foodbox.png" alt="foodbox">
+          </div>
+          <div class="ph-oh-safe ph-all-style">
+            <img class="ph-safe-off" src="img/ph-safe-off.png" alt="safe-off">
+            <img class="ph-safe-on" src="img/ph-safe-on.png" alt="safe-on">
+          </div>
+          <div class="ph-hs-btn ph-all-style ph-sw-btn">
+            <img src="img/house-on.png" alt="house-on">
+          </div>
+          <div class="ph-fe-btn ph-all-style ph-sw-btn">
+            <img src="img/feed-off.png" alt="feed-off">
+          </div>
+          <div class="ph-sv-btn ph-all-style ph-sw-btn">
+            <img src="img/shovel-off.png" alt="shovel-off">
+          </div>
+          <div class="ph-mem-box">
+            <div class="ph-mem-text">
+              <p id="">SARA1013</p>
+              <!--記得補ID -->
+              <p>寵物:<span id="">董董</span></p>
+              <!--記得補ID -->
+              <img src="img/ph-coin.png" alt="coin">
+              <div class="coin">
+                <p id="">3000</p>
+                <!--記得補ID -->
+              </div>
+            </div>
+          </div>
+          <div class="ph-hg ph-all-style">
+            <!-- 先none,click後加上display:block; -->
+            <img src="img/hungry.png" alt="hungry">
+          </div>
+          <div class="ph-ac-box">
+            <p>推薦活動 | </p>
+          </div>
+          <div class="ph-ac-hide">
+            <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
+              <ul>
+                <li>
+                  <a href=" activityContent.html">2019-12-28 寵物禮儀課程 在日常生活裡，要怎麼照顧牠們呢？SexFat醫師來告訴你！</a>
+                </li>
+                <li>
+                  <a href=" activityContent.html">2019-12-18 我們了解主人們的困擾，選擇在動物醫院開設醫療身體照護課程，讓寵物熟悉醫生，不抗拒醫療身體照護的行為！</a>
+                </li>
+              </ul>
+            </marquee>
+          </div>
+          <div class="bg-bgc"></div>
+          <div class="bg-item">
+            <div class="bg-title">
+              <span>背包</span>
+              <label for="bagPag-control" class="bg-exit">
+                <span></span>
+                <span></span>
+              </label>
+            </div>
+
+            <div class="bg-sh">
+              <a href="products.html">
+                <div class="bg-sh-cr">
+                  <span></span>
+                  <span></span>
+                </div>
+              </a>
+              <a href="products.html">去商店購物</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--------------------------------- 寵物家 結束 --------------------------------->
+      <!--------------------------------- 寵物家 餵食開始 --------------------------------->
+      <div class="ph-fd-sw ph-check">
+        <div class="ph-all">
+          <div class="ph-bgi">
+            <img src="img/ph-fd-bgi.png" alt="bgi">
+          </div>
+          <div class="pet-img ph-all-style ph-fd-pet">
+            <img src="img/ph-cat.png" alt="pet">
+          </div>
+          <div class="ph-fd-box ph-all-style">
+            <img class="ph-fd-before" src="img/ph-fd-before.png" alt="ph-fd-before">
+            <img class="ph-fd-full" src="img/foodbox-full.png" alt="foodbox-full">
+            <img class="ph-fd-after" src="img/foodbox.png" alt="ph-fd-after">
+          </div>
+          <div class="ph-coin-plus ph-all-style">
+            <img class="coin-plus" src="img/ph-coin-plus.png" alt="ph-coin-plus">
+          </div>
+          <div class="ph-fd ph-all-style">
+            <img src="img/ph-fd-feed.png" alt="ph-fd-feed">
+          </div>
+
+          <div class="ph-hs-btn ph-all-style ph-sw-btn">
+            <img src="img/house-off.png" alt="house-on">
+          </div>
+          <div class="ph-fe-btn ph-all-style ph-sw-btn">
+            <img src="img/feed-on.png" alt="feed-off">
+          </div>
+          <div class="ph-sv-btn ph-all-style ph-sw-btn">
+            <img src="img/shovel-off.png" alt="shovel-off">
+          </div>
+          <div class="ph-mem-box">
+            <div class="ph-mem-text">
+              <p id="">SARA1013</p>
+              <!--記得補ID -->
+              <p>寵物:<span id="">董董</span></p>
+              <!--記得補ID -->
+              <img src="img/ph-coin.png" alt="coin">
+              <div class="coin">
+                <p id="">3000</p>
+                <!--記得補ID -->
+              </div>
+            </div>
+          </div>
+          <div class="ph-ac-box">
+            <p>推薦活動 | </p>
+          </div>
+          <div class="ph-ac-hide">
+            <marquee height="50" direction="up" scrollamount="2">
+              <a href=" activityContent.html">2019-12-28 寵物禮儀課程 在日常生活裡，要怎麼照顧牠們呢？SexFat醫師來告訴你！</a></marquee>
+          </div>
+          <div class="bg-bgc"></div>
+          <div class="bg-item">
+            <div class="bg-title">
+              <span>背包</span>
+              <label for="bagPag-control" class="bg-exit">
+                <span></span>
+                <span></span>
+              </label>
+            </div>
+
+            <div class="bg-sh">
+              <a href="products.html">
+                <div class="bg-sh-cr">
+                  <span></span>
+                  <span></span>
+                </div>
+              </a>
+              <a href="products.html">去商店購物</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--------------------------------- 寵物家 餵食結束 --------------------------------->
+      <!--------------------------------- 寵物家 鏟屎開始 --------------------------------->
+      <div class="ph-pu-sw ph-check">
+        <div class="ph-all">
+          <div class="ph-bgi">
+            <img src="img/ph-pu-bgi.png" alt="bgi">
+          </div>
+          <div class="pet-img ph-all-style ph-pu-pet">
+            <img src="img/ph-cat.png" alt="pet">
+          </div>
+          <div class="ph-st-box ph-all-style">
+            <img class="ph-st-before" src="img/shitbox-full.png" alt="shitbox-full">
+            <img class="ph-st-after" src="img/shitbox.png" alt="shitbox">
+          </div>
+          <div class="ph-coin-plus ph-all-style">
+            <img class="coin-plus" src="img/ph-coin-plus.png" alt="ph-coin-plus">
+          </div>
+          <div class="ph-st ph-all-style">
+            <img src="img/ph-shit.png" alt="ph-shit">
+          </div>
+
+          <div class="ph-hs-btn ph-all-style ph-sw-btn">
+            <img src="img/house-off.png" alt="house-on">
+          </div>
+          <div class="ph-fe-btn ph-all-style ph-sw-btn">
+            <img src="img/feed-off.png" alt="feed-off">
+          </div>
+          <div class="ph-sv-btn ph-all-style ph-sw-btn">
+            <img src="img/shovel-on.png" alt="shovel-off">
+          </div>
+          <div class="ph-mem-box">
+            <div class="ph-mem-text">
+              <p id="">SARA1013</p>
+              <!--記得補ID -->
+              <p>寵物:<span id="">董董</span></p>
+              <!--記得補ID -->
+              <img src="img/ph-coin.png" alt="coin">
+              <div class="coin">
+                <p id="">3000</p>
+                <!--記得補ID -->
+              </div>
+            </div>
+          </div>
+          <div class="ph-ac-box">
+            <p>推薦活動 | </p>
+          </div>
+          <div class="ph-ac-hide">
+            <marquee height="50" direction="up" scrollamount="2">
+              <a href=" activityContent.html">2019-12-28 寵物禮儀課程 在日常生活裡，要怎麼照顧牠們呢？SexFat醫師來告訴你！</a></marquee>
+          </div>
+        </div>
+      </div>
+      <!--------------------------------- 寵物家 鏟屎結束 --------------------------------->
+      <!--------------------------------- 別人家 開始 --------------------------------->
+      <div class="ph-oh-sw ph-check">
+        <div class="ph-all">
+          <div class="ph-bgi">
+            <img src="img/ph-oh-bgi.png" alt="bgi">
+          </div>
+          <div class="pet-img ph-all-style ph-oh-pet">
+            <img src="img/ph-dog.png" alt="pet">
+          </div>
+          <div class="ph-oh-st-box ph-all-style">
+            <img src="img/ph-diaper-1.png" alt="shitbox">
+          </div>
+          <div class="ph-oh-fd-box ph-all-style">
+            <img src="img/ph-fdbox-1.png" alt="foodbox">
+          </div>
+          <div class="ph-hs-btn ph-all-style ph-sw-btn">
+            <img src="img/house-on.png" alt="house-on">
+          </div>
+          <div class="ph-oh-safe ph-all-style">
+            <img class="ph-safe-off" src="img/ph-safe-off.png" alt="safe-off">
+            <img class="ph-safe-on" src="img/ph-safe-on.png" alt="safe-on">
+          </div>
+          <div class="ph-safe-tip ph-all-style">
+            <img src="img/ph-safe-tip.png" alt="">
+          </div>
+          <div class="ph-mem-box">
+            <div class="ph-mem-text">
+              <p id="">HsuHao</p>
+              <!--記得補ID -->
+              <p>寵物:<span id="">提摸摸</span></p>
+              <!--記得補ID -->
+              <img src="img/ph-coin.png" alt="coin">
+              <div class="coin">
+                <p style="text-align: center;" id="">25000</p>
+                <!--記得補ID -->
+              </div>
+            </div>
+          </div>
+          <div class="ph-ac-box">
+            <p>推薦活動 | </p>
+          </div>
+          <div class="ph-ac-hide">
+            <marquee height="50" direction="up" scrollamount="2">
+              <a href="activityContent.html">2019-12-28 寵物禮儀課程 在日常生活裡，要怎麼照顧牠們呢？SexFat醫師來告訴你！</a></marquee>
+          </div>
+          <div class="ph-qa-bgc"></div>
+          <div class="ph-qa-box">
+            <div class="ph-qa-title">
+              <span>偷錢關卡</span>
+              <div class="qa-exit">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="ph-qa-topic">
+              <div class="ph-qa-content">
+                <span class="qa-topic">狗不適合吃哪種東西？</span>
+              </div>
+              <div class="ph-qa-choose">
+                <span class="qa-right">巧克力</span>
+                <span class="qa-wrong">牛肉乾</span>
+              </div>
+            </div>
+            <div class="ph-qa-right">
+              <h4>偷竊成功！！！</h4>
+              <img src="img/ph-qa-right.png" alt="">
+              <div>
+                <hr>
+                <p>Ｑ：<span class="qa-topic">狗不適合吃哪種東西？</span></p>
+                <p>Ａ：<span class="qa-right">巧克力</span></p>
+                <p>
+                  巧克力含有可可鹼(Theobromine)，人體平均要花6-12小時代謝掉可可鹼，但是狗狗對可可鹼要花很久的時間才能代謝(研究顯示可能要長達72小時)。
+                </p>
+              </div>
+            </div>
+            <div class="ph-qa-wrong">
+              <h4>偷竊失敗！！！</h4>
+              <img src="img/ph-qa-wrong.png" alt="">
+              <div>
+                <hr>
+                <p>Ｑ：<span class="qa-topic">狗不適合吃哪種東西？</span></p>
+                <p>Ａ：<span class="qa-wrong">巧克力</span></p>
+                <p>
+                  巧克力含有可可鹼(Theobromine)，人體平均要花6-12小時代謝掉可可鹼，但是狗狗對可可鹼要花很久的時間才能代謝(研究顯示可能要長達72小時)。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 第二畫面QA-start -->
+
+    <div class="pet-container pet-section-two" style="display: block;">
+      <div class="row pet-section-qa">
+        <div class="col-sm-12 col-md-4 ">
+          <div class="pet-unknown wow fadeInLeft hover" data-wow-duration="1s" data-wow-delay="0.2s">
+            <img src="./img/pet-unknown.png" alt="" class="">
+            <img class="pet-unknown-pet" src="img/pet-test-catfirst.png" alt="" style="z-index: 500;">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-8 pet-question">
+          <img src="./img/pet-qa-paper.png" alt="">
+
+          <div class="pet-qa-answer">
+            <p class="pet-question-title">你適合當狗奴還是貓奴？</p>
+            <div class="pet-question-number">
+              <img class="" src="./img/pet-circle-1.png" alt="">
+            </div>
+            <p class="pet-qa-title">Q1.請問您的居住空間？</p>
+            <div class="pet-answer-btn">
+              <button class="pet-answer" id="SSS" value="cat">小坪數套房</button>
+              <button class="pet-answer" value="dog">透天</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 第二畫面QA-end -->
+    <!-- 第三頁-QA結束打造寵物頁面-start -->
+    <div class="pet-container pet-section-three">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 pet-dress-answer">
+          <p>您適合養</p>
+          <img class="pet-dress-paper" src="./img/pet-dress-paper.png" alt="">
+
+          <div class="pet-dress-pet">
+            <img class="pet-dress-head">
+            <img class="pet-dress-body">
+            <img class="pet-dress-tail">
+          </div>
+          <button class="pet-dress">去打造你的寵物</button>
+        </div>
+      </div>
+    </div>
+    <!-- 第三頁-QA結束打造寵物頁面-end-->
+
+
+    <div class="index-shop">
+      <div class="shop-bg">
+        <img src="./img/index-shopbg.png" alt="" />
+      </div>
+      <div class="shop-contain">
+        <h2>寵物商品</h2>
+        <div class="shop-cards">
+        </div>
+        <a href="products.html" class="view wow fadeIn hover" data-wow-duration="1s" data-wow-delay="1s">
+          <div class="next-btn">
+            <img src="img/index-nextbtn.png" alt="">
+          </div>
+          <p>
+            VIEW ALL
+          </p>
+        </a>
+      </div>
+    </div>
+    <div class="index-activity">
+      <div class="index-cloud">
+        <img src="./img/cloud.png" alt="" class="wow shake" data-wow-duration="10s">
+        <img src="./img/cloud1.png" alt="" class="wow shake" data-wow-duration="20s" data-wow-delay="1s">
+      </div>
+      <h2>最新活動</h2>
+      <div class="activity-cards">
+        <!-- <div class="activity-card">
+          <a href="activityContent.html">
+            <img src="./img/activity.png" alt="" />
+            <div class="activity-text clearfix">
+              <p>2019.10.12 FRI</p>
+              <h4>活動標題</h4>
+              <div class="signup">
+                <p>#分享講座</p>
+                <p>25人已報名</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="activity-card">
+          <a href="activityContent.html">
+            <img src="./img/activity1.png" alt="" />
+            <div class="activity-text clearfix">
+              <p>2019.10.12 FRI</p>
+              <h4>活動標題</h4>
+              <div class="signup">
+                <p>#分享講座</p>
+                <p>25人已報名</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="activity-card ">
+          <a href="activityContent.html">
+            <img src="./img/activity2.png" alt="" />
+            <div class="activity-text clearfix">
+              <p>2019.10.12 FRI</p>
+              <h4>活動標題</h4>
+              <div class="signup">
+                <p>#分享講座</p>
+                <p>25人已報名</p>
+              </div>
+            </div>
+          </a>
+        </div> -->
+      </div>
+      <a href="activities.html" class="view">
+        <div class="next-btn">
+          <img src="img/index-nextbtn.png" alt="">
+        </div>
+        <p>
+          VIEW ALL
+        </p>
+      </a>
+
+    </div>
+    <div class="index-skyline wow fadeIn hover" data-wow-duration="2s" data-wow-delay="1s">
+      <img src="./img/skyline.png" alt="">
+    </div>
+    <section class="rankingPet"
+      style="background-image: url(img/rank_background.png);
+    background-repeat: no-repeat; background-position: center; background-size:cover;width: 100%;margin: -10px auto 0;">
+      <!-- 排行榜rankno1~3置中開始 -->
+      <h2 class="pageHeader">排行榜</h2>
+      <div class="rankCenter">
+        <!-- 排行榜rankno2 開始-->
+        <div class="rankno2">
+          <a href="">
+            <div class="rankno2_1">
+              <img src="img/rank2.png">
+            </div>
+            <div class="rankno2_2 memberInfo">
+              <P>寵物 : Sara</P>
+              <P>飼主 : 莎拉</P>
+              <P>愛心幣 : 30000</P>
+            </div>
+            <div id="rankno2_1" class="rankno2_3 petPic">
+              <img src="img/rank_no2pet.png" class="wow bounce hover" data-wow-duration="1.5s" data-wow-delay=".5s">
+            </div>
+            <div class="rankno2_4">
+              <img src="img/rank_no2$.png">
+            </div>
+          </a>
+        </div>
+        <!-- 排行榜rankno2 結束-->
+
+        <!-- 排行榜rankno1 開始 -->
+        <div class="rankno1">
+          <a href="">
+            <div class="rankno1_1">
+              <img src="img/rank1.png">
+            </div>
+            <div class="rankno1_2 memberInfo">
+              <P>寵物 : Alan</P>
+              <P>飼主 : 艾倫</P>
+              <P>愛心幣 : 70000</P>
+            </div>
+            <div id="rankno1_1" class="rankno1_3 petPic">
+              <img src="img/rank_no1pet.png" class="wow bounce hover" data-wow-duration="1s" data-wow-delay="0s">
+            </div>
+            <div class="rankno1_4">
+              <img src="img/rank_no1$.png">
+            </div>
+          </a>
+        </div>
+        <!-- 排行榜rankno1 結束 -->
+
+        <!-- 排行榜rankno3 開始 -->
+        <div class="rankno3">
+          <a href="">
+            <div class="rankno3_1">
+              <img src="img/rank3.png">
+            </div>
+            <div class="rankno3_2 memberInfo">
+              <P>寵物 : Marco</P>
+              <P>飼主 : 馬克</P>
+              <P>愛心幣 : 45000</P>
+            </div>
+            <div id="rankno3_1" class="rankno3_3 petPic">
+              <img src="img/rank_no3pet.png" class="wow bounce hover" data-wow-duration="2s" data-wow-delay="1s">
+            </div>
+            <div class="rankno3_4">
+              <img src="img/rank_no3$.png">
+            </div>
+          </a>
+        </div>
+        <!-- 排行榜rankno3 結束 -->
+      </div>
+    </section>
+    <footer>
+      <p>Copyright © 2019 PetKeepers</p>
+    </footer>
+  </div>
+
+  <!-- 左側動物顯示 Start-->
+  <script>
+    var pet = 'dog';
+    var dog = 0;
+    var cat = 0;
+    var number = 0; //題號
+    var arr = [
+      ['./img/pet-circle-1.png', 'Q1.請問您的居住空間？', '小坪數套房', '透天'],
+      ['./img/pet-circle-2.png', 'Q2.請問您居住的空間大小？', '只夠自己住', '地方較大'],
+      ['./img/pet-circle-3.png', 'Q3.請問您比較喜歡在家裡還是戶外？', '在家', '戶外'],
+      ['./img/pet-circle-4.png', 'Q4.請問您願意每個月為寵物花費多少錢？', '3000元以內', '3000元以上'],
+      ['./img/pet-circle-5.png', 'Q5.請問您生活環境的清潔狀態?？', '潔癖', '不拘小節'],
+    ];
+    var petArr = new Array(4); //動物部位三個元素+顏色
+    var petUnknown = ['img/pet-test-catfirst.png', 'img/pet-test-catsencon.png', 'img/pet-test-dogfirst.png',
+      'img/pet-test-dogsencon.png'
+    ];
+
+    setInterval(function () {
+      $('.pet-unknown-pet').prop('src', petUnknown[Math.floor(Math.random() *
+        3)]); //進來都隨機出現
+    }, 1000);
+
+
+    //按鈕事件        
+    $(document).ready(function () {
+      // alert($('.pet-answer:first-child').text());
+      set('dog');
+      $('.pet-answer').click(function () {
+        //step1.偵測答案根據狗或貓 step2.加分
+        if ($(this).val() == 'cat') {
+          cat++;
+        } else {
+          dog++;
+        }
+        number++; //step3.換題
+        if (number < 5) {
+
+          $('.pet-question-number img').prop('src', arr[number][0]);
+          $('.pet-qa-title').text(arr[number][1]);
+          $('#SSS').text(arr[number][2]);
+          $('.pet-answer:last-child').text(arr[number][3]);
+        } else {
+          if (cat > dog) {
+
+            set('cat');
+            show();
+          } else {
+
+            set('dog');
+            show();
+          }
+          $('.pet-section-two').hide();
+          $('.pet-section-three').show();
+        }
+      });
+
+
+
+
+
+
+      /////第三部確定送出
+      // $('.Pet-StepThree-Ok').click(function () {
+      //   alert('name:' + $('.pet-name').val() + '種類：' + pet + '寵物圖：' + petArr);
+      // });
+    });
+    ///////輸入部位值  QA結束打造寵物頁面與第二步
+    function set(petType) { //petType:狗貓種類
+      if (petType !== null) {
+        pet = petType;
+
+        if (pet == 'dog') {
+
+          petArr[0] = './backStage/images/pet-stage-dogheadfirst.png';
+          petArr[1] = './backStage/images/pet-stage-dogbody.png';
+          petArr[2] = './backStage/images/pet-stage-dogtailfirst.png';
+          petArr[3] = -1;
+          $('.Pets-Color').css('filter', 'none');
+
+          return;
+        }
+
+        petArr[0] = './backStage/images/pet-stage-catheadfirst.png';
+        petArr[1] = './backStage/images/pet-stage-catbody.png';
+        petArr[2] = './backStage/images/pet-stage-cattailfirst.png';
+        petArr[3] = -1;
+        $('.Pets-Color').css('filter', 'none');
+        return;
+      }
+
+    }
+
+    ///////做完題目顯示寵物
+    function show() {
+      $('.pet-dress-head').prop('src', petArr[0]);
+      $('.pet-dress-body').prop('src', petArr[1]);
+      $('.pet-dress-tail').prop('src', petArr[2]);
+
+    }
+  </script>
+
+  <!--  第三頁-QA結束打造寵物頁面-Start-->
+  <script>
+    $(document).ready(function () {
+      if(window.sessionStorage.getItem('petName')!=="null"&&window.sessionStorage.getItem('petName')){
+        $('.pet-dress').prop('disabled', true);
+        $('.pet-dress').css('background-color', '#c9c9c9');
+      }
+      $('.pet-dress').click(function () {
+        if (window.sessionStorage.getItem('petName') === "null" || !window.sessionStorage.getItem('petName')) {
+          location.href = "./beAPetKeeper.html?petType=" + pet;
+        }
+      });
+    });
+  </script>
+  <!-- 第三頁-QA結束打造寵物頁面-End-->
+
+  <script>
+    new WOW({}).init();
+  </script>
+  <script type="text/javascript">
+    function G(e) {
+      return document.getElementById(e);
+    }
+
+    function myPlayer(con, child, speed) {
+      var ts = G(con).getElementsByClassName(child),
+        timer, k = 0;
+      var timer = setInterval(function () {
+        for (var m = 0; m < ts.length; m++) {
+          ts[m].style.display = 'none';
+        }
+        ts[k].style.display = 'block';
+        if (k > ts.length - 2) {
+          k = 0;
+        } else {
+          k++;
+        }
+      }, speed);
+    }
+    myPlayer('con', 'item', 3000);
+  </script>
+
+
+  <script type="text/javascript">
+    window.addEventListener("load", function () {
+      console.log("--------this is a book------------")
+      //----------------取回排行榜資料
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function () {
+        if (xhr.responseText.indexOf("error") == -1) {
+          let member = JSON.parse(xhr.responseText);
+          showRanking(member);
+        }
+
+        console.log("--------this is a book again------------")
+      }
+      xhr.open("get", "php/ranking.php");
+      xhr.send(null);
+    })
+
+    function showRanking(member) {
+      console.log("--------this is a book again 2------------")
+      let petPics = document.querySelectorAll(".petPic");
+      let memInfos = document.querySelectorAll(".memberInfo");
+
+      petPics[0].getElementsByTagName("img")[0].src = "img/user/" + member[1].petPic;
+      memInfos[0].innerHTML = `<P>寵物 : ${member[1].petName}</P>
+                            <P>飼主 : ${member[1].memName}</P>
+                            <P>愛心幣 : ${member[1].coin}</P>`;
+      $("#rankno2_1").css('filter', `hue-rotate( ${member[1].petColor}deg)`);
+      //--------------------------------------------------------------
+      petPics[1].getElementsByTagName("img")[0].src = "img/user/" + member[0].petPic;
+      memInfos[1].innerHTML = `<P>寵物 : ${member[0].petName}</P>
+                            <P>飼主 : ${member[0].memName}</P>
+                            <P>愛心幣 : ${member[0].coin}</P>`;
+      $("#rankno1_1").css('filter', `hue-rotate( ${member[0].petColor}deg)`);
+      //--------------------------------------------------------------                             
+      petPics[2].getElementsByTagName("img")[0].src = "img/user/" + member[2].petPic;
+      memInfos[2].innerHTML = `<P>寵物 : ${member[2].petName}</P>
+                            <P>飼主 : ${member[2].memName}</P>
+                            <P>愛心幣 : ${member[2].coin}</P>`;
+      $("#rankno3_1").css('filter', `hue-rotate( ${member[2].petColor}deg)`);
+      //--------------------------------------------------------------
+      console.log("--------this is a book again 3------------")
+    }
+
+
+    function rankcolor() {
+      document.getElementsByClassName('rankno1_3').style.filter = 'hue-rotate(+$member[1].petColor+deg)';
+    }
+  </script>
+
+  <script>
+    new WOW({}).init();
+  </script>
+</body>
+
+</html>

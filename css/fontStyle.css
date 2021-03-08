@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto|Roboto+Condensed&display=swap');
+
+html {
+    /* 參考網頁--https://www.oxxostudio.tw/articles/201809/css-font-size.html */
+    /* 網頁rem字體基準 1rem == 16px */
+    font-size: 1rem;
+}
+
+:root {
+    /* fontSize */
+    /* rem--(html的font-size:1rem(16px) * rem = 字體大小) ex. 1rem(16px)*2.25rem = 36px */
+    /* xlFZ: 36px */
+    --xlFZ: 2.25rem;
+    /* lFZ: 24px */
+    --lFZ: 1.5rem;
+    /* mFZ: 20px */
+    --mFZ: 1.25rem;
+    /* sFZ: 16px */
+    --sFZ: 1rem;
+    /* xsFZ: 14px */
+    --xsFZ: 0.875rem;
+    /* xxsFZ: 12px -->字體不要小於12px (google chrome小於12px的字體會強制維持12px)*/
+    --xxsFZ: 0.75rem;
+
+    /* color */
+    --mainOrange_color: #f28123;
+    --mainWhite: #fff;
+    --mainBlue_color: #028090;
+    --mainDarkblue_color: #114b5f;
+    --btnHover_color: #114b5f;
+    --mainYellow_color: #ffc342;
+    --main-navGreen_color: #4a6e70;
+}
+
+body {
+    /* 基本行距1.7 */
+    line-height: 1.7;
+    /* 基本字型 */
+    font-family: 'Noto Sans TC', 'Roboto Condensed', 'Roboto', sans-serif;
+    /* 基本字距 */
+    letter-spacing: 0.125rem;
+    /* 基本色彩 */
+    color: var(--mainDarkblue_color);
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5{
+    /* 字距3px */
+    letter-spacing: 0.1875rem;
+    font-weight: 500;
+}
+
+/* -------------h2(36px)-------------- */
+h2{
+    font-size: var(--xlFZ);
+    color: var(--mainOrange_color); 
+}
+
+/* -------------h2.pageHeader(36px)-------------- */
+h2.pageHeader{
+    color: var(--mainWhite);
+    font-weight: 700;
+    letter-spacing: 1rem;
+}
+
+/* -------------h3(24px)-------------- */
+h3{font-size: var(--lFZ);}
+
+/* --------------h4(20px)-------------- */
+h4{font-size: var(--mFZ);}
+
+/* --------------p(16px)-------------- */
+p{font-size: var(--sFZ);}
+
+/* --------------.bigBtnFz(20px)-------------- */
+.bigBtnFz {
+    color: var(--mainWhite);
+    font-size: var(--mFZ);
+    
+}
+
+/* --------------.btnFz(16px)-------------- */
+.btnFz {
+    font-size: var(--sFZ);
+    
+}
+
+/* --------------.xsFZInfo(14px)-------------- */
+.xsFZInfo {
+    font-size: var(--xsFZ);
+}
+
+/* --------------.xxsFZinfo(12px)-------------- */
+.xxsFZinfo {
+    font-size: var(--xxsFZ);
+}

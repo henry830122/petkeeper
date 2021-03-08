@@ -1,0 +1,1495 @@
+* {
+    /* outline: 1px solid red; */
+    box-sizing: border-box;
+}
+
+/* ---------------- 背包checkbox strat ---------------- */
+
+#bagPag-control {
+    position: fixed;
+    left: -9999px;
+    top: 0px;
+}
+
+.bg-item {
+    display: none;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-item {
+    display: block;
+    animation: boxone .6s;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-bgc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 19;
+    background-color: #333;
+    opacity: 0.8;
+    animation: loginback 1s forwards;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 20;
+    width: 75%;
+    height: 70%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-title {
+    width: 100%;
+    height: 5%;
+    background-color: #FFC454;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-exit span {
+    background-color: #00848B;
+    width: 2.8%;
+    height: 1%;
+    display: block;
+    position: absolute;
+    top: 2.2%;
+    right: 1%;
+    z-index: 22;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-exit span:nth-of-type(1) {
+    transform: rotate(45deg);
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-exit span:nth-of-type(2) {
+    transform: rotate(135deg);
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul {
+    overflow: auto;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: flex-start;
+    width: 100%;
+    height: 78%;
+    margin: 4% 0% 2%;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li {
+    width: 28%;
+    height: 60%;
+    margin: 2% 2% 2%;
+    background-color: #F0F1F3;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li:hover{
+    border: 1px solid #00848B;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-sh {
+    position: absolute;
+    width: 90%;
+    height: 5%;
+    bottom: 1%;
+    right: 5%;
+    text-align: right;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh a:nth-of-type(1) {
+    background-color: #00848B;
+    display: block;
+    width: 3.3%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh a:nth-of-type(2) {
+    color: #00848B;
+    height: 100%;
+    display: inline-block;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 5%;
+    line-height: 100%;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-sh a:hover{
+    color: #FB9860;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr {
+    background-color: #00848B;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr:hover{
+    background-color: #FB9860;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr span {
+    background-color: #fff;
+    display: block;
+    width: 41%;
+    height: 10%;
+    position: absolute;
+    left: 35%;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 32%;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr span:nth-of-type(2) {
+    transform: rotate(135deg);
+    top: 58%;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li div {
+    width: 60%;
+    height: 40%;
+    display: block;
+    margin: 8% auto;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li div img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li h5 {
+    font-size: 18px;
+    margin-bottom: 5%;
+    font-weight: bold;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li span {
+    font-size: 18px;
+    margin-bottom: 5%;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li b {
+    color: #FB9860;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li p img {
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li:nth-of-type(6) {
+    visibility: hidden;
+}
+
+/* ---------------- 東西沒了燈箱 開始 ---------------- */
+.ph-tips-lightBox{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 30;
+    width: 40%;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: none;
+    animation: boxone .6s;
+}
+
+    @keyframes boxone {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+.ph-tips-exit span{
+    background-color: #00848B;
+    width: 4%;
+    height: 4%;
+    display: block;
+    position: absolute;
+    top: 15%;
+    right: 2%;
+    z-index: 22;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.ph-tips-exit span:nth-of-type(1) {
+    transform: rotate(45deg);
+}
+
+.ph-tips-exit span:nth-of-type(2) {
+    transform: rotate(135deg);    
+}
+.ph-tips-lightBox h5{
+    font-size: 18px;
+    text-align: center;
+    line-height: 100px;
+}
+.ph-tips-bgc{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 19;
+    background-color: #333;
+    opacity: 0.8;
+    animation: loginback 1s forwards;
+}
+/* ---------------- 東西沒了燈箱 開始 ---------------- */
+/* ---------------- 去別人家提示燈箱 開始 ---------------- */
+.ph-other-lightbox{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 30;
+    width: 40%;
+    height: 25%;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    display: none;
+    animation: boxone .6s;
+}
+
+.ph-other-title {
+    width: 100%;
+    height: 15%;
+    background-color: #FFC454;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+
+.ph-other-box {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+.ph-other-box div {
+    width: 25%;
+    text-align: center;
+    background-color: #02808F;
+    color: #fff;
+    margin-top: 2%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.ph-other-box h5 {
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ---------------- 去別人家提示燈箱 結束 ---------------- */
+/* ---------------- 裝備穿脫燈箱 start---------------- */
+.bg-all-lightbox{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 30;
+    width: 40%;
+    height: 20%;
+    background-color: #fff;
+    border-radius: 10px;
+    border:1px solid #aaa;
+    display: none;
+    animation: boxone .6s;
+}
+.bg-all-title{
+    width: 100%;
+    height: 15%;
+    background-color: #FFC454;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.bg-all-box{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+.bg-all-box div{
+    width: 25%;
+    text-align: center;
+    background-color: #02808F;
+    color: #fff;
+    margin-top: 2%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.bg-all-box div:hover,
+.ph-other-box div:hover {
+    background-color: #114B5F;
+}
+.bg-all-box h5{
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+.bg-used{
+    opacity: 0.4;
+    border: 1px solid #02808F;
+}
+.display-n{
+    display: none;
+}
+/* ---------------- 裝備穿脫燈箱 end---------------- */
+/* ---------------- 背包checkbox end---------------- */
+/* ---------------- 寵物家開始 ---------------- */
+.ph-all {
+    width: 100%;
+    position: relative;
+}
+
+.ph-all img {
+    display: block;
+    width: 100%;
+}
+
+.ph-bgi {
+    width: 100%;
+}
+
+.ph-all-style {
+    width: 20%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.ph-dr {
+    z-index: 2;
+    top: 18.2%;
+    left: 12%;
+}
+
+.ph-dr:hover .ph-dr-cl {
+    display: none;
+}
+
+.ph-dr .ph-dr-op {
+    display: none;
+}
+
+.ph-dr:hover .ph-dr-op {
+    display: block;
+}
+
+.pet-img {
+    bottom: 12%;
+    left: 30%;
+    z-index: 5;
+}
+
+.ph-st-box {
+    z-index: 7;
+    right: 10%;
+    bottom: 8%;
+    width: 15%;
+}
+
+.ph-st {
+    z-index: 3;
+    right: 14%;
+    bottom: 15%;
+    width: 6%;
+}
+
+.ph-fd-box {
+    z-index: 7;
+    right: 28%;
+    bottom: 8%;
+    width: 10%;
+}
+
+.ph-st-box:hover,
+.ph-fd-box:hover,
+.ph-oh-safe:hover {
+    animation: box-ani 2s linear;
+}
+
+.ph-fd-box .ph-fd-after {
+    display: none;
+}
+
+@keyframes box-ani {
+    0% {
+        transform: rotate(0);
+    }
+
+    5% {
+        transform: rotate(5deg);
+    }
+
+    10% {
+        transform: rotate(0deg);
+    }
+
+    15% {
+        transform: rotate(5deg);
+    }
+
+    20% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.ph-st-box .ph-st-no {
+    display: none;
+}
+
+.ph-fd-box .ph-fd-full {
+    display: none;
+}
+
+.ph-sd {
+    z-index: 2;
+    right: 2%;
+    width: 6%;
+}
+
+.ph-sd-bp {
+    bottom: 63%;
+}
+
+.ph-sd-sp {
+    bottom: 50%;
+}
+
+.ph-sd-oh {
+    bottom: 37%;
+}
+
+.ph-sw-btn {
+    z-index: 2;
+    bottom: 2%;
+    width: 6%;
+}
+
+.ph-hs-btn {
+    left: 2%;
+}
+
+.ph-fe-btn {
+    left: 10%;
+}
+
+.ph-sv-btn {
+    left: 18%;
+}
+
+.ph-mem-box {
+    z-index: 3;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    width: 20%;
+    height: 13.3%;
+    border-radius: 10px;
+    background-color: rgba(16, 75, 95, .8);
+    /* background-color: rgba(242, 129, 35, .5); */
+}
+.ph-mem-box-2{
+    background-color: rgba(242, 129, 35, .5);
+}
+.ph-mem-box-1{
+    z-index: 3;
+    position: fixed;
+    top: 15%;
+    left: 3%;
+    width: 300px;
+    height: 120px;
+    border-radius: 10px;
+    background-color: rgba(16, 75, 95, .8);
+}
+.ph-mem-text {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: #fff;
+}
+
+.ph-mem-text img {
+    width: 17%;
+    opacity: 1;
+    position: absolute;
+    bottom: -3%;
+    left: 0;
+    z-index: 6;
+}
+
+.ph-mem-text .coin {
+    background-color: #fff;
+    position: absolute;
+    left: 10%;
+    bottom: 0%;
+    width: 85%;
+    height: 32%;
+    z-index: 5;
+    border-radius: 5px;
+}
+
+.ph-mem-text .coin p {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #333;
+    text-align: center;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.ph-mem-text .coin p span {
+    font-size: 12px;
+    color: #F38932;
+}
+
+.ph-hg {
+    bottom: 98%;
+    left: 25%;
+    width: 50%;
+    z-index: 5;
+    animation: tip-ani 1.5s linear infinite;
+}
+
+.ph-ac-box {
+    position: absolute;
+    bottom: 1.5%;
+    right: 50%;
+    color: #F38932;
+}
+
+.ph-ac-hide {
+    position: absolute;
+    bottom: 1.5%;
+    right: 3%;
+    width: 46%;
+    color: #fff;
+    overflow: hidden;
+    height: 27px;
+}
+
+.ph-ac-hide a {
+    color: #fff;
+    opacity: 0.9;
+}
+.ph-ac-hide li,
+.ph-ac-hide a {
+    cursor: pointer;
+}
+.ph-ac-hide li:hover,
+.ph-ac-hide li:hover a
+    {
+    color: #f28123;
+}
+.ph-clothes{
+    top: 29%;
+    left: 8%;
+    width: 45%;
+    transform: rotate(90deg);
+    display: none;
+}
+.ph-pet-upDown{
+    animation: pet-upDown-ani 1.5s infinite;
+}
+@keyframes pet-upDown-ani{
+    0%{
+        transform: translateY(0);
+    }
+    20%{
+        transform: translateY(-30%);
+    }
+    35%{
+        transform: translateY(0);
+    }
+    65%{
+        transform: translateY(0);
+    }
+    85%{
+        transform: translateY(-10%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/* ---------------- 寵物家結束 ---------------- */
+/* ---------------- 寵物家 餵食開始 ---------------- */
+.ph-fd-sw .ph-fd-pet {
+    width: 40%;
+    left: 10%;
+}
+
+.ph-fd-sw .ph-fd-box {
+    width: 20%;
+}
+
+.ph-coin-plus {
+    width: 10%;
+    bottom: 30%;
+    right: 33.5%;
+    opacity: 0;
+    z-index: 6;
+}
+
+.ph-coin-num{
+    width: 10%;
+    height: 13%;
+    bottom: 30%;
+    right: 25%;
+    font-size: 36px;
+    opacity: 0;
+    z-index: 7;
+    font-weight: bold;
+    color: #f28123;
+}
+.coin-num-ani{
+    animation: coin-num-ani 2s .9s linear;
+}
+@keyframes coin-num-ani{
+    0% {        
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+.coin-ani {
+    animation: coin-ani 2s .9s linear;
+}
+
+@keyframes coin-ani {
+    0% {
+        transform: rotateY(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateY(360deg);
+        opacity: 0;
+    }
+}
+
+.ph-fd-sw .ph-fd {
+    width: 8%;
+    bottom: 10%;
+    right: 34%;
+    opacity: 0;
+    z-index: 6;
+}
+
+.ph-fd-ani {
+    animation: fd-ani 1s linear;
+}
+
+@keyframes fd-ani {
+    0% {
+        opacity: 0;
+        bottom: 10%;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 30%;
+        opacity: 0;
+    }
+}
+
+/* ---------------- 寵物家 餵食結束 ---------------- */
+/* ---------------- 寵物家 鏟屎開始 ---------------- */
+.ph-pu-sw .ph-pu-pet {
+    width: 40%;
+    left: 10%;
+    transform: rotateY(180deg);
+}
+
+.ph-pu-sw .ph-st-after {
+    display: none;
+}
+
+.ph-pu-sw .ph-st-box {
+    width: 20%;
+    right: 30%;
+}
+
+.ph-pu-sw .ph-st {
+    width: 10%;
+    bottom: 18%;
+    right: 35%;
+    opacity: 0;
+    z-index: 6;
+}
+
+/* ---------------- 寵物家 鏟屎結束 ---------------- */
+/* ---------------- 別人家 開始 ---------------- */
+.ph-oh-sw .ph-oh-st-box {
+    width: 20%;
+    right: 6%;
+    z-index: 2;
+    bottom: 8%;
+    cursor: auto;
+}
+
+.ph-oh-fd-box {
+    z-index: 2;
+    right: 28%;
+    bottom: 8%;
+    width: 10%;
+    cursor: auto;
+}
+
+.ph-oh-fd {
+    z-index: 3;
+    right: 30%;
+    bottom: 13%;
+    width: 6%;
+    cursor: auto;
+}
+
+.ph-oh-sw .ph-oh-pet {
+    width: 26%;
+    left: 10%;
+}
+
+.ph-oh-safe {
+    z-index: 2;
+    top: 38%;
+    left: 36.5%;
+    width: 13%;
+}
+
+.ph-safe-tip {
+    z-index: 3;
+    top: 25%;
+    left: 49%;
+    width: 10%;
+    animation: tip-ani 1.5s linear infinite;
+}
+
+@keyframes tip-ani {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.ph-oh-safe:hover .ph-safe-off {
+    display: none;
+}
+
+.ph-oh-safe .ph-safe-on {
+    display: none;
+}
+
+.ph-oh-safe:hover .ph-safe-on {
+    display: block;
+}
+
+/* ---------------- 偷錢關卡 開始 ---------------- */
+.ph-qa-bgc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 19;
+    background-color: #333;
+    opacity: 0.8;
+    display: none;
+    animation: loginback 1s forwards;
+}
+
+@keyframes loginback {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        background-color: rgba(0, 0, 0, .8);
+    }
+}
+
+.ph-qa-box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 20;
+    width: 70%;
+    height: 65%;
+    background-color: #fff;
+    border-radius: 10px;
+    display: none;
+    animation: boxone .6s;
+}
+
+.ph-qa-title {
+    width: 100%;
+    height: 5%;
+    background-color: #FFC454;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.qa-exit span {
+    background-color: #00848B;
+    width: 2.8%;
+    height: 1%;
+    display: block;
+    position: absolute;
+    top: 2.2%;
+    right: 1%;
+    z-index: 22;
+    border-radius: 5px;
+}
+
+.qa-exit span:nth-of-type(1) {
+    transform: rotate(45deg);
+}
+
+.qa-exit span:nth-of-type(2) {
+    transform: rotate(135deg);
+}
+
+/* ---------------- 偷錢關卡 題目 開始 ---------------- */
+.ph-qa-topic {
+    width: 100%;
+    height: 100%;
+}
+
+.ph-qa-content {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ph-qa-content .qa-topic {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    width: 95%;
+}
+
+.ph-qa-choose {
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+
+.ph-qa-choose span {
+    width: 30%;
+    background-color: #02808F;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.ph-qa-choose span:hover {
+    background-color: #114B5F;
+    cursor: pointer;
+}
+
+/* ---------------- 偷錢關卡 題目 結束 ---------------- */
+/* ---------------- 偷錢關卡 成功 開始 ---------------- */
+
+.ph-qa-right {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ph-qa-right h4 {
+    line-height: 100px;
+    vertical-align: bottom;
+    text-align: center;
+    height: 20%;
+    color: #F28123;
+    font-weight: bold;
+}
+
+.ph-qa-right img {
+    line-height: 100px;
+    vertical-align: bottom;
+    text-align: center;
+    width: 40%;
+    height: 25%;
+}
+
+.ph-qa-right div {
+    width: 90%;
+    height: 50%;
+}
+
+.ph-qa-right div p:nth-of-type(2) {
+    color: #F28123;
+}
+
+/* ---------------- 偷錢關卡 成功 結束 ---------------- */
+/* ---------------- 偷錢關卡 失敗 開始 ---------------- */
+.ph-qa-wrong {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ph-qa-wrong h4 {
+    line-height: 100px;
+    vertical-align: bottom;
+    text-align: center;
+    height: 20%;
+    color: #027F93;
+    font-weight: bold;
+}
+
+.ph-qa-wrong img {
+    line-height: 100px;
+    vertical-align: bottom;
+    text-align: center;
+    width: 30%;
+    height: 25%;
+}
+
+.ph-qa-wrong div {
+    width: 90%;
+    height: 50%;
+}
+
+.ph-qa-wrong div p:nth-of-type(2) {
+    color: #F28123;
+}
+
+/* ---------------- 偷錢關卡 失敗 結束 ---------------- */
+/* ---------------- 偷錢關卡 結束 ---------------- */
+/* ---------------- 偷錢關卡 switch 開始 ---------------- */
+.ph-qa-wrong {
+    display: none;
+}
+
+.ph-qa-right {
+    display: none;
+}
+
+/* ---------------- 偷錢關卡 switch 結束 ---------------- */
+/* ---------------- 別人家 結束 ---------------- */
+/* ---------------- 寵物家 switch 開始---------------- */
+.ph-fd-sw {
+    display: none;
+}
+
+.ph-pu-sw {
+    display: none;
+}
+
+.ph-oh-sw {
+    display: none;
+}
+
+/* ---------------- 寵物家 switch 結束---------------- */
+/* ------------------------------------RWD for iPhoneX------------------------------------- */
+@media screen and (max-width: 768px) {
+    .ph-all .ph-bgi img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .ph-all .ph-bgi {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .ph-dr,
+    .ph-st-box,
+    .ph-st,
+    .ph-fd-box,
+    .ph-fd,
+    .ph-oh-fd,
+    .ph-oh-fd-box,
+    .ph-oh-st-box {
+        display: none;
+    }
+
+    .ph-sw-btn {
+        z-index: 10;
+        bottom: 5.2%;
+        width: 18%;
+    }
+
+    .ph-sd {
+        z-index: 2;
+        right: 2%;
+        width: 18%;
+    }
+
+    .ph-hs-btn {
+        left: 10%;
+    }
+
+    .ph-fe-btn {
+        left: 40%;
+    }
+
+    .ph-sv-btn {
+        left: 70%;
+    }
+
+    .ph-sd-bp {
+        bottom: 67%;
+    }
+
+    .ph-sd-sp {
+        bottom: 57%;
+    }
+
+    .ph-sd-oh {
+        bottom: 47%;
+    }
+
+    .ph-all .pet-img {
+        width: 80%;
+        left: 10%;
+        bottom: 13%;
+    }
+
+    .ph-all .ph-fd-pet,
+    .ph-all .ph-pu-pet {
+        bottom: 23%;
+    }
+
+    .ph-mem-box {
+        left: 10%;
+        width: 80%;
+    }
+
+    .ph-mem-text {
+        width: 90%;
+    }
+
+    .ph-mem-text .coin {
+        bottom: 2%;
+    }
+
+    #bagPag-control:checked~.ph-check .ph-all .bg-exit span {
+        width: 8%;
+        height: 1%;
+        right: 2%;
+        cursor: pointer;
+    }
+
+    #bagPag-control:checked~.ph-check .ph-all .bg-list-ul {
+        height: 85%;
+        margin: 4% 8% 2%;        
+    }
+    #bagPag-control:checked~.ph-check .ph-all .bg-list-ul li {
+        width: 80%;
+        height: 60%;
+        cursor: pointer;
+    }
+
+    #bagPag-control:checked~.ph-check .ph-all .bg-sh a:nth-of-type(1) {
+        width: 12%;
+    }
+
+    #bagPag-control:checked~.ph-check .ph-all .bg-sh a:nth-of-type(2) {
+        margin-right: 15%;
+    }
+
+    #bagPag-control:checked~.ph-check .ph-all .bg-list-ul li:nth-of-type(6) {
+        display: none;
+    }
+
+    .ph-oh-safe {
+        top: 41.5%;
+        left: 6%;
+        width: 40%;
+    }
+
+    .ph-safe-tip {
+        width: 20%;
+        top: 36%;
+        left: 48%;
+    }
+
+    .ph-all .ph-rwd-show {
+        display: block;
+        right: 30%;
+    }
+
+    .ph-fd-sw .ph-fd-box,
+    .ph-pu-sw .ph-st-box {
+        width: 40%;
+        bottom: 14%;
+        display: block;
+    }
+
+    .ph-coin-plus {
+        width: 20%;
+        right: 39%;
+    }
+    .ph-coin-num {
+        bottom: 24%;
+        right: 31%;
+        font-size: 24px;      
+    }
+
+    .ph-fd-sw .ph-fd {
+        width: 15%;
+        bottom: 10%;
+        right: 39%;
+        display: block;
+    }
+
+    @keyframes fd-ani {
+        0% {
+            opacity: 0;
+            bottom: 20%;
+        }
+
+        5% {
+            opacity: 1;
+        }
+
+        80% {
+            opacity: 1;
+        }
+
+        100% {
+            bottom: 30%;
+            opacity: 0;
+        }
+    }
+
+    .ph-pu-sw .ph-st {
+        width: 20%;
+        bottom: 19%;
+        right: 40%;
+        display: block;
+    }
+
+    .ph-ac-box {
+        right: 70%;
+    }
+
+    .ph-ac-hide {
+        width: 60%;
+    }
+
+    @keyframes text-auto {
+        0% {
+            left: 200px;
+        }
+
+        100% {
+            left: -800px;
+        }
+    }
+
+    .ph-qa-choose span {
+        width: 80%;
+        background-color: #02808F;
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .qa-exit span {
+        width: 8%;
+        height: 1%;
+        right: 2%;
+    }
+
+    .ph-qa-right img {
+        width: 80%;
+        height: 20%;
+    }
+
+    .ph-qa-wrong img {
+        width: 80%;
+    }
+
+    .ph-qa-wrong div,
+    .ph-qa-right div {
+        overflow: auto;
+    }
+
+    .ph-qa-box {
+        width: 80%;
+        height: 75%;
+    }
+    .bg-all-lightbox,
+    .ph-other-lightbox{
+        width: 75%;
+        height: 18%;
+    }
+    .ph-hs-sw .pet-img,
+    .ph-oh-petAni {
+        animation: pet-upDown-ani 1.5s infinite;
+    }
+    .ph-tips-lightBox {
+        width: 85%;
+        height: 100px;
+    }
+    .ph-tips-exit span{
+        width: 7%;
+        height: 5%;
+    }
+    .ph-mem-box-1 {
+        width: 280px;
+        height: 110px;
+        top: 12%;
+    }
+}
+
+@media screen and (max-width: 414px) and (max-height: 760px) {
+    .ph-mem-box {
+        top: 8%;
+        height: 16%;
+    }
+
+    .ph-sd-bp {
+        bottom: 65%;
+    }
+
+    .ph-sd-sp {
+        bottom: 54%;
+    }
+
+    .ph-sd-oh {
+        bottom: 43%;
+    }
+
+    .pet-img {
+        z-index: 2;
+    }
+
+    .ph-all .pet-img {
+        width: 70%;
+    }
+
+    .ph-oh-safe {
+        top: 37.4%;
+        left: 10%;
+    }
+
+    .ph-safe-tip {
+        width: 20%;
+        top: 32%;
+        left: 52%;
+    }
+    .bg-all-lightbox,
+    .ph-other-lightbox {
+        width: 75%;
+        height: 22%;
+    }    
+}
+
+/* ------------------------------------only for windows------------------------------------- */
+@media screen and (min-width: 768px) {
+    .ph-oh-petAni {
+        animation: otherPet-ani 4s linear infinite;
+    }
+
+    @keyframes otherPet-ani {
+        0% {
+            transform: translateX(0);            
+        }
+        45%{
+            opacity: 1;
+        }
+        49% {
+            opacity: 0;
+            transform: rotateY(0deg) translateX(100%);
+        }
+        50% {
+            transform: rotateY(180deg) translateX(-100%);
+            opacity: 0;
+        }
+        51%{
+            transform: rotateY(180deg) translateX(-100%);
+            opacity: 0;
+        }
+        55% {
+            transform: rotateY(180deg) translateX(-90%);
+            opacity: 1;
+        }
+        95%{
+            transform: rotateY(180deg) translateX(-10%);
+            opacity: 1;
+        }
+        99%{
+            transform: rotateY(180deg) translateX(0);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 0;
+        }
+    }
+    .ph-hs-sw .pet-img {
+        animation: pet-ani 5s linear 2;
+    }
+    .ph-click-run {
+        animation: pet-ani 5s linear 1;
+    }
+    @keyframes pet-ani {
+        0% {
+            transform: translate(-20%);
+        }
+
+        5% {
+            transform: translate(20%, 0%);
+        }
+
+        10% {
+            transform: translate(100%, -120%);
+        }
+
+        20% {
+            transform: translate(150%, -100%);
+        }
+
+        45% {
+            transform: translate(190%, -100%);
+            opacity: 1;
+        }
+
+        49% {
+            transform: rotateY(0deg) translate(200%, -100%);
+            opacity: 0;
+        }
+
+        50% {
+            transform: rotateY(180deg) translate(-200%, -100%);
+            opacity: 0;
+        }
+
+        51% {
+            transform: rotateY(180deg) translate(-200%, -100%);
+            opacity: 0;
+        }
+
+        55% {
+            transform: rotateY(180deg) translate(-190%, -100%);
+            opacity: 1;
+        }
+
+        80% {
+            transform: rotateY(180deg) translate(-120%, -100%);
+        }
+
+        90% {
+            transform: rotateY(180deg) translate(-40%, 0%);
+        }
+
+        95% {
+            transform: rotateY(180deg) translate(20%, 0%);
+            opacity: 1;
+        }
+
+        98% {
+            transform: rotateY(180deg) translate(20%, 0%);
+            opacity: 0;
+        }
+
+        99% {
+            transform: rotateY(0deg) translate(-20%, 0%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translate(-5%);
+            opacity: 1;
+        }
+    }
+}

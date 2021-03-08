@@ -1,0 +1,775 @@
+
+/* ---------------- 背包checkbox strat ---------------- */
+#bagPag-control{
+    position: fixed;
+    left: -9999px;
+    top: 0px;
+}
+.bg-item{
+    display: none;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-item{
+    display: block;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-bgc{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 19;
+    background-color: #333;
+    opacity: 0.8;    
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-item{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 20;
+    width: 80%;
+    height: 75%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-title{
+    width: 100%;
+    height: 5%;
+    background-color: #FFC454;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-exit span{
+    background-color: #00848B;
+    width: 2.8%;
+    height: 1%;
+    display: block;
+    position: absolute;
+    top: 2.2%;
+    right: 1%;
+    z-index: 22;
+    border-radius: 5px;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-exit span:nth-of-type(1){
+    transform: rotate(45deg);
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-exit span:nth-of-type(2){
+    transform: rotate(135deg);
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul{
+    overflow: auto;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    width: 100%;
+    height: 78%;
+    margin: 4% 0 2%;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li{
+    width: 28%;
+    height: 60%;
+    margin: 2% 2% 2%;
+    background-color: #F0F1F3;
+    display: block;
+    text-align: center;
+    font-weight: bold; 
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-sh{
+    position: absolute;
+    width: 90%;
+    height: 5%;
+    bottom: 1%;
+    right: 5%; 
+    text-align: right;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-sh a:nth-of-type(1){
+    background-color: #00848B;
+    display: block;
+    width: 3.3%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-sh a:nth-of-type(2){
+    color: #00848B;
+    height: 100%;
+    display: inline-block;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 5%;
+    line-height: 100%;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr{
+    background-color: #00848B;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr span{
+    background-color: #fff;
+    display: block;
+    width: 41%;
+    height: 10%;
+    position: absolute;
+    left: 35%;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr span:nth-of-type(1){
+    transform: rotate(45deg);
+    top: 32%;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-sh-cr span:nth-of-type(2){
+    transform: rotate(135deg);
+    top: 58%;
+} 
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li div{
+    width: 60%;
+    height: 40%;
+    display: block;
+    margin: 8% auto;    
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li div img{
+    width: 100%;
+    height: 100%;
+    display: block;
+       
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li h5{
+    font-size: 18px;   
+    margin-bottom: 5%;
+    font-weight: bold; 
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li h6{
+    font-size: 16px;
+    color: #FB9860;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li span{
+    font-size: 18px;    
+    margin-bottom: 5%;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li p img{
+    width: 10%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+#bagPag-control:checked~.ph-check .ph-all .bg-list-ul li:nth-of-type(6){
+    visibility: hidden;
+}
+/* ---------------- 背包checkbox end---------------- */
+/* ---------------- 寵物家開始 ---------------- */
+.ph-all{
+    width: 100%;
+    position: relative;
+}
+.ph-all img{
+    display: block;
+    width: 100%;
+}
+.ph-bgi{
+    width: 100%;
+}
+.ph-all-style{
+    width: 20%;
+    position: absolute;
+    cursor: pointer;
+}
+.ph-dr{
+    z-index: 2;
+    top: 18.2%;
+    left: 12%; 
+}
+.ph-dr:hover .ph-dr-cl{
+    display: none;
+}
+.ph-dr .ph-dr-op{
+    display: none;
+}
+.ph-dr:hover .ph-dr-op{
+    display: block;
+}
+.pet-img{    
+    bottom: 12%;
+    left: 30%;    
+    z-index: 5;
+}
+.pet-img +.pet-img{
+    
+    left: 65%;
+    bottom: 33%;
+    transform: rotateY(180deg);
+}
+.ph-st-box{
+    z-index: 2;
+    right: 10%;
+    bottom: 8%;
+    width: 15%;
+}
+.ph-st{
+    z-index: 3;
+    right: 14%;
+    bottom: 15%;
+    width: 6%;
+}
+.ph-fd-box{
+    z-index: 2;
+    right: 28%;
+    bottom: 8%;
+    width: 10%;
+}
+.ph-fd{
+    z-index: 3;
+    right: 30%;
+    bottom: 13%;
+    width: 6%;
+}
+.ph-sd{
+    z-index: 2;
+    right: 2%;
+    width: 6%;
+}
+.ph-sd-bp{    
+    bottom: 63%;    
+}
+.ph-sd-sp{
+    bottom: 50%;
+}
+.ph-sd-oh{
+    bottom: 37%;
+}
+.ph-sw-btn{
+    z-index: 2;
+    bottom: 2%;
+    width: 6%;
+}
+.ph-hs-btn{
+    left: 2%;
+}
+.ph-fe-btn{
+    left: 10%;
+}
+.ph-sv-btn{
+    left: 18%;
+}
+
+.ph-mem-box{
+    z-index: 3;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    width: 20%;
+    height: 13.3%;
+    border-radius: 10px;
+    background-color: rgba(16, 75, 95,.8);
+}
+.ph-mem-text{
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: #fff;
+}
+.ph-mem-text img{
+    width: 17%;
+    opacity: 1;
+    position: absolute;
+    bottom: -3%;
+    left: 0;
+    z-index: 6;
+}
+.ph-mem-text .coin{
+   background-color: #fff;
+   position: absolute;
+   left: 10%;
+   bottom: 0%;
+   width: 85%;
+   height: 32%;
+   z-index: 5;
+   border-radius: 5px;
+}
+.ph-mem-text .coin p{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #333;
+    text-align: center;
+    padding: 0 10px;
+    font-weight: bold;
+}
+.ph-mem-text .coin p span{
+    font-size: 12px;
+    color: #F38932;
+}
+.ph-hg{
+    bottom: 35%;
+    left: 35%;
+    width: 10%;
+    z-index: 4;
+    display: none;
+}
+.ph-ac-box{
+    position: absolute;
+    bottom: 1.5%;
+    right: 50%;
+    color: #F38932;
+}
+.ph-ac-hide{
+    position: absolute;
+    bottom: 1.5%;
+    right: 5%;
+    width: 43%;
+    color: #fff;
+    overflow: hidden;
+    height: 27px;
+}
+.ph-ac-hide p{
+    animation: text-auto 8s linear infinite;
+    position: absolute;
+}
+.ph-ac-hide a{
+    color: #F38932
+}
+@keyframes text-auto{
+    0%{left: 600px;}
+    100%{left: -800px;}
+}
+/* ---------------- 寵物家結束 ---------------- */
+/* ---------------- 寵物家 餵食開始 ---------------- */
+.ph-fd-sw .ph-fd-pet{
+    width: 40%;
+    left: 10%;
+}
+.ph-fd-sw .ph-fd-box{
+    width: 20%;
+}
+.ph-fd-sw .ph-fd{
+    width: 14%;
+    bottom: 18%;
+    right: 31%;
+}
+/* ---------------- 寵物家 餵食結束 ---------------- */
+/* ---------------- 寵物家 鏟屎開始 ---------------- */
+.ph-pu-sw .ph-pu-pet{
+    width: 40%;
+    left: 10%;
+    transform: rotateY(180deg);
+}
+.ph-pu-sw .ph-st-box{
+    width: 20%;
+    right: 30%;
+}
+.ph-pu-sw .ph-st{
+    width: 10%;
+    bottom: 18%;
+    right: 35%;
+}
+/* ---------------- 寵物家 鏟屎結束 ---------------- */
+/* ---------------- 別人家 開始 ---------------- */
+.ph-oh-sw .ph-oh-st-box{
+    width: 20%;
+    right: 6%;
+    z-index: 2;
+    bottom: 8%;
+    cursor: auto;
+}
+.ph-oh-fd-box{
+    z-index: 2;
+    right: 28%;
+    bottom: 8%;
+    width: 10%;
+    cursor: auto;
+}
+.ph-oh-fd{
+    z-index: 3;
+    right: 30%;
+    bottom: 13%;
+    width: 6%;
+    cursor: auto;
+}
+.ph-oh-sw .ph-oh-pet{
+    width: 26%;
+    left: 10%;
+}
+.ph-oh-safe{
+    z-index: 2;
+    top: 38%;
+    left: 36.5%; 
+    width: 13%;
+}
+.ph-safe-tip{
+    z-index: 3;
+    top: 25%;
+    left: 50%;
+    width: 10%;
+}
+.ph-oh-safe:hover .ph-safe-off{
+    display: none;
+}
+.ph-oh-safe .ph-safe-on{
+    display: none;
+}
+.ph-oh-safe:hover .ph-safe-on{
+    display: block;
+}
+/* ---------------- 偷錢關卡 開始 ---------------- */
+.ph-qa-bgc{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 19;
+    background-color: #333;
+    opacity: 0.8;
+    display: none;
+}
+.ph-qa-box{
+    position: absolute;;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 20;
+    width: 80%;
+    height: 75%;
+    background-color: #fff;
+    border-radius: 10px;
+    display: none;
+}
+.ph-qa-title{
+    width: 100%;
+    height: 5%;
+    background-color: #FFC454;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.qa-exit span{
+    background-color: #00848B;
+    width: 2.8%;
+    height: 1%;
+    display: block;
+    position: absolute;
+    top: 2.2%;
+    right: 1%;
+    z-index: 22;
+    border-radius: 5px;
+}
+.qa-exit span:nth-of-type(1){
+    transform: rotate(45deg);
+}
+.qa-exit span:nth-of-type(2){
+    transform: rotate(135deg);
+}
+/* ---------------- 偷錢關卡 題目 開始 ---------------- */
+.ph-qa-topic{
+    width: 100%;
+    height: 100%;
+}
+.ph-qa-content{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content:space-around;
+    align-items: center;
+}
+.ph-qa-content .qa-topic{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    width: 95%;
+}
+.ph-qa-choose{
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content:space-around;
+    align-items: center;
+    height: 100px;
+}
+.ph-qa-choose span{
+    width: 30%;
+    background-color: #02808F;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+}
+.ph-qa-choose span:hover{
+    background-color: #114B5F;
+}
+/* ---------------- 偷錢關卡 題目 結束 ---------------- */
+/* ---------------- 偷錢關卡 成功 開始 ---------------- */
+.ph-qa-right{
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-around;
+    align-items: center;
+}
+.ph-qa-right h4{
+    line-height: 100px;
+    vertical-align: bottom;
+    text-align: center;
+    height: 20%;
+    color: #F28123;
+    font-weight: bold;
+}
+.ph-qa-right img{
+    line-height: 100px;
+    vertical-align: bottom;
+    text-align: center;
+    width: 40%;
+    height: 25%;
+}
+.ph-qa-right div{
+    width: 90%;
+    height: 50%;
+}
+.ph-qa-right div p:nth-of-type(2){
+    color: #F28123;
+}
+/* ---------------- 偷錢關卡 成功 結束 ---------------- */
+/* ---------------- 偷錢關卡 失敗 開始 ---------------- */
+.ph-qa-wrong{
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-around;
+    align-items: center;
+}
+.ph-qa-wrong h4{
+    line-height: 100px;
+    vertical-align: bottom;
+    text-align: center;
+    height: 20%;
+    color: #027F93;
+    font-weight: bold;
+}
+.ph-qa-wrong img{
+    line-height: 100px;
+    vertical-align: bottom;
+    text-align: center;
+    width: 30%;
+    height: 25%;
+}
+.ph-qa-wrong div{
+    width: 90%;
+    height: 50%;
+}
+.ph-qa-wrong div p:nth-of-type(2){
+    color: #F28123;
+}
+/* ---------------- 偷錢關卡 失敗 結束 ---------------- */
+/* ---------------- 偷錢關卡 結束 ---------------- */
+/* ---------------- 偷錢關卡 switch 開始 ---------------- */
+.ph-qa-wrong{display: none;}
+.ph-qa-right{display: none;}
+/* ---------------- 偷錢關卡 switch 開始 ---------------- */
+/* ---------------- 別人家 結束 ---------------- */
+/* ---------------- 寵物家 switch 開始---------------- */
+.ph-fd-sw{
+    display: none;
+}
+.ph-pu-sw{
+    display: none;
+}
+.ph-oh-sw{
+    display: none;
+}
+/* ---------------- 寵物家 switch 結束---------------- */
+/* ------------------------------------RWD for iPhoneX------------------------------------- */
+@media screen and (max-width: 768px){
+    .index-pethouse{
+        height: 100vh;
+    }
+    .ph-all .ph-bgi img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+    .ph-all .ph-bgi {
+        height: 100vh;
+        overflow: hidden;
+    }
+    .ph-dr,
+    .ph-st-box,
+    .ph-st,
+    .ph-fd-box,
+    .ph-fd,
+    .ph-oh-fd,
+    .ph-oh-fd-box,
+    .ph-oh-st-box{
+        display: none;
+    }
+    .ph-sw-btn{
+        z-index: 2;
+        bottom: 5.2%;
+        width: 18%;
+    }
+    .ph-sd{
+        z-index: 2;
+        right: 2%;
+        width: 18%;
+    }
+    .ph-hs-btn{
+        left: 10%;
+    }
+    .ph-fe-btn{
+        left: 40%;
+    }
+    .ph-sv-btn{
+        left: 70%;
+    }
+    .ph-sd-bp{    
+        bottom: 67%;
+    }
+    .ph-sd-sp{
+        bottom: 57%;
+    }
+    .ph-sd-oh{
+        bottom: 47%;
+    }
+    .ph-all .pet-img{
+        width: 80%;
+        left: 10%;
+        bottom: 13%;
+    }
+    .ph-all .ph-fd-pet,
+    .ph-all .ph-pu-pet{
+        bottom: 23%;
+    }
+    .ph-mem-box{        
+        left: 10%;
+        width: 80%;
+    }
+    .ph-mem-text{
+        width: 90%;
+    }
+    .ph-mem-text .coin{
+        bottom: 2%;
+    }
+    #bagPag-control:checked~.ph-check .ph-all .bg-exit span{
+        width: 8%;
+        height: 1%;
+        right: 2%;
+    }
+    #bagPag-control:checked~.ph-check .ph-all .bg-list-ul{
+        height: 85%;
+    }
+    #bagPag-control:checked~.ph-check .ph-all .bg-list-ul li{
+        width: 80%;
+        height: 60%;
+    }
+    #bagPag-control:checked~.ph-check .ph-all .bg-sh a:nth-of-type(1){
+        width: 12%;
+    }
+    #bagPag-control:checked~.ph-check .ph-all .bg-sh a:nth-of-type(2){
+        margin-right: 15%;
+    }
+    #bagPag-control:checked~.ph-check .ph-all .bg-list-ul li:nth-of-type(6){
+        display: none;
+    }
+    .ph-oh-safe{
+        top: 41.5%;
+        left: 6%; 
+        width: 40%;
+    }
+    .ph-safe-tip{
+        width: 20%;
+        top: 36%;
+        left: 48%;
+    }
+    .ph-all .ph-rwd-show{
+        display: block;
+        right: 30%;
+    }
+    .ph-fd-sw .ph-fd-box,
+    .ph-pu-sw .ph-st-box{
+        width: 40%;
+        bottom: 14%;
+    }
+    .ph-fd-sw .ph-fd{
+        width: 26%;
+        bottom: 19.5%;
+        right: 37%;
+    }
+    .ph-pu-sw .ph-st{
+        width: 20%;
+        bottom: 19%;
+        right: 40%;
+    }
+    .ph-ac-box{
+        right: 70%;
+    }
+    .ph-ac-hide{
+        width: 60%;
+    }
+    .ph-ac-hide p{
+        animation: text-auto 8s linear infinite;
+    }
+    @keyframes text-auto{
+        0%{left: 200px;}
+        100%{left: -800px;}
+    }
+    .ph-qa-choose span{
+        width: 80%;
+        background-color: #02808F;
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+    }
+    .qa-exit span{
+        width: 8%;
+        height: 1%;
+        right: 2%;
+    }
+    .ph-qa-right img{
+        width: 80%;
+    }
+    .ph-qa-wrong img{
+        width: 80%;
+    }
+}
+ @media screen and (max-width: 414px) and (max-height: 760px){
+    .ph-mem-box{
+        top: 8%;
+        height: 16%;
+    }
+    .ph-sd-bp {
+        bottom: 65%;
+    }
+    .ph-sd-sp {
+        bottom: 54%;
+    }
+    .ph-sd-oh {
+        bottom: 43%;
+    }
+    .pet-img {
+        z-index: 2;
+    }
+    .ph-all .pet-img {
+        width: 70%;
+    }
+    .ph-oh-safe {
+        top: 37.4%;
+        left: 10%;
+    }
+    .ph-safe-tip{
+        width: 20%;
+        top: 32%;
+        left: 52%;
+    }
+} 

@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto|Roboto+Condensed&display=swap");
+/* --------------- loading --------------- */
+#loading {
+  position: fixed;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(#ebedee, #fdfbfb);
+  top: 0;
+  left: 0;
+  z-index: 999; }
+  #loading .loadingWrap {
+    margin: auto;
+    width: 25%; }
+
+/* loading-top */
+#loading .loading-top {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px; }
+  #loading .loading-top .logoLeft {
+    width: 35%;
+    position: relative; }
+    #loading .loading-top .logoLeft #logo_left_left {
+      position: absolute;
+      left: -100%;
+      transition: .25s; }
+  #loading .loading-top .logoRight {
+    width: 65%; }
+
+/* loading-bottom */
+#loading .loading-bottom {
+  width: 100%;
+  display: flex; }
+  #loading .loading-bottom .bottomWrap {
+    margin: auto; }
+    #loading .loading-bottom .bottomWrap span {
+      font-weight: 700;
+      letter-spacing: 0.125rem;
+      line-height: 1.7;
+      font-family: 'Noto Sans TC', 'Roboto Condensed', 'Roboto', sans-serif;
+      color: #2e5c6d; }

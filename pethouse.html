@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>寵物當家--鏟屎官</title>
+  <!-- title的小logo -->
+  <link rel="icon" href="img/petKeepersIcon.ico" type="image/x-icon/" />
+  <!-- 以下的link不要刪掉 -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <!-- 把自己負責頁面的css檔案link：css/fontStyle.css前，ex.css/shopStyle.css -->
+  <link rel="stylesheet" href="css/fontStyle.css" />
+  <link rel="stylesheet" href="css/header-footer.css" />
+  <link rel="stylesheet" href="css/ph-style.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="js/login.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/burger.js"></script>
+  <script src="js/pethouse.js"></script>
+</head>
+
+<body>
+    <!-- 登入 -->
+    <div id="login" class="col-md-12" style="display: none;">
+      <!-- loginbox開始 -->
+      <div id="loginbox" class="loginbox col-md-5">
+        <h6>會員登入</h6>
+        <div class="loginpic">
+          <img src="img/logo-01.png" alt="">
+        </div>
+        <div class="login-input">
+          <div>
+            <span>帳號:</span>
+            <input type="text" id="memIdInput" maxlength="10">
+          </div>
+          <div>
+            <span>密碼:</span>
+            <input type="password" id="memPswInput" maxlength="10">
+          </div>
+          <input type="submit" value="送出" id="login-submit">
+          <span id="registeredbtn">還沒申請帳號?</span>
+        </div>
+        <span id="login-close">X</span>
+      </div><!-- loginbox結束 -->
+
+      <!-- registeredbox開始 -->
+      <div id="registeredbox" class="registeredbox col-md-5" style="display: none;">
+        <h6>會員註冊</h6>
+        <div class="login-input">
+          <div>
+            <span>帳號:</span>
+            <input type="text" name="mid" id="memIdValue" maxlength="10">
+          </div>
+          <div>
+            <span>密碼:</span>
+            <input type="password" name="mpsw" id="memPswValue" maxlength="10">
+          </div>
+          <div>
+            <span>姓名:</span>
+            <input type="text" name="mname" id="memNameValue" maxlength="10">
+          </div>
+          <div>
+            <span>暱稱:</span>
+            <input type="text" name="mnick" id="memNickValue" maxlength="10">
+          </div>
+          <div>
+            <span>性別:</span>
+            <div class="registeredsex">
+              <input type="radio" name="sex" value="0" style="width: 20px;" checked>男
+              <input type="radio" name="sex" value="1" style="width: 20px;">女
+            </div>
+          </div>
+          <div>
+            <span>信箱:</span>
+            <input type="text" name="memail" id="memMailValue" maxlength="50">
+          </div>
+          <div>
+            <span>手機:</span>
+            <input type="text" name="mphone" id="memPhoneValue" maxlength="10">
+          </div>
+          <p class="logInAlert">※以上欄位都必須填寫</p>
+          <input type="submit" value="送出" id="registered-submit">
+        </div>
+        <span id="registered-close">X</span>
+      </div><!-- registeredbox結束 -->
+
+    </div><!-- 登入結束 -->
+    <header>
+      <div class="index-logo">
+        <div class="logo">
+          <a href="home.html"><img src="./img/logo.png" alt="" /></a>
+        </div>
+      </div>
+      <div class="menu">
+        <ul class="menu-ul">
+          <li class="landPage"><a id="enterPethouse">寵物當家</a></li>
+          <li><a href="beAPetKeeper.html">成為飼主</a></li>
+          <li><a href="products.html">寵物商店</a></li>
+          <li><a href="activities.html">活動專區</a></li>
+          <div class="login">
+            <div class="login-status">
+              <a id="loginopenbtn">登入</a>
+              <b>|</b>
+              <a id="registeredopenbtn">註冊</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+      <div class="burger">
+        <span class="bar1" id="bar"></span>
+        <span class="bar2" id="bar"></span>
+        <span class="bar3" id="bar"></span>
+      </div>
+    </header>
+
+  <div class="wrap">
+    <!--------------------------------- 背包checkBox --------------------------------->
+    <input type="checkbox" id="bagPag-control">
+    <!--------------------------------- 寵物家 開始 --------------------------------->
+    <div class="ph-mem-box-1">
+      <div class="ph-mem-text">
+        <p id="ph-memId-1"></p>
+        <p>寵物:<span id="ph-memName-1"></span></p>
+        <img src="img/ph-coin.png" alt="coin">
+        <div class="coin">
+          <p id="ph-coin-1"></p>
+        </div>
+      </div>
+    </div>
+    <div class="ph-hs-sw ph-check">
+      <div class="ph-all">
+        <div class="ph-bgi">
+          <img src="img/house.png" alt="bgi">
+        </div>
+        <div class="ph-dr ph-all-style">
+          <img class="ph-dr-cl" src="img/door-close.png" alt="dr-op">
+          <img class="ph-dr-op" src="img/door-open.png" alt="dr-cl">
+        </div>
+        <div class="pet-img ph-all-style">
+          <div id="pet-click">
+            <div id="pet-color-1">
+              <img id="pet-style-1" src="" alt="pet">
+            </div>
+            <div class="ph-hg ph-all-style">
+              <img src="img/hungry.png" alt="hungry">
+            </div>
+            <div class="ph-clothes ph-all-style">
+              <img src="img/ph-clothes.png" alt="clothes">
+            </div>
+          </div>
+        </div>
+        <div class="ph-st-box ph-all-style">
+          <img class="ph-st-full" src="img/shitbox-full.png" alt="shitbox-full">
+          <img class="ph-st-no" src="img/shitbox.png" alt="shitbox">
+        </div>
+        <div class="ph-fd-box ph-all-style">
+          <img class="ph-fd-no" src="img/foodbox.png" alt="foodbox">
+          <img class="ph-fd-after" src="img/foodbox-full.png" alt="foodbox-full">
+        </div>
+        <label for="bagPag-control" class="bp-btn">
+          <div class="ph-sd-bp ph-all-style ph-sd">
+            <img src="img/bagpag.png" alt="bagpag">
+          </div>
+        </label>
+        <div class="ph-sd-sp ph-all-style ph-sd">
+          <a href="products.html"><img src="img/shop.png" alt="shop"></a>
+        </div>
+        <div class="ph-sd-oh ph-all-style ph-sd">
+          <img src="img/otherhouse.png" alt="otherhouse">
+        </div>
+        <div class="ph-hs-btn ph-all-style ph-sw-btn">
+          <img src="img/house-on.png" alt="house-on">
+        </div>
+        <div class="ph-fe-btn ph-all-style ph-sw-btn">
+          <img src="img/feed-off.png" alt="feed-off">
+        </div>
+        <div class="ph-sv-btn ph-all-style ph-sw-btn">
+          <img src="img/shovel-off.png" alt="shovel-off">
+        </div>
+        
+        <div class="ph-ac-box">
+          <p>推薦活動 | </p>
+        </div>
+        <div class="ph-ac-hide">
+          <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
+            <ul>
+              <li>
+                <a id="ph-act-date-1" href=" activityContent.html"></a> -- #<a id="ph-act-type-1" href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-1" ></a> -- View more
+              </li>
+              <li>
+                <a id="ph-act-date-2" href=" activityContent.html"></a> -- #<a id="ph-act-type-2"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-2"></a> -- View
+                more
+              </li>
+              <li>
+                <a id="ph-act-date-3" href=" activityContent.html"></a> -- #<a id="ph-act-type-3"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-3"></a> -- View
+                more
+              </li>
+            </ul>
+          </marquee>
+        </div>
+        <div class="ph-tips-bgc display-n"></div>
+        <div class="ph-tips-lightBox">
+          <div class="ph-tips-exit">
+            <span></span>
+            <span></span>
+          </div>
+          <div class="ph-amount-notEnough display-n">
+            <h5>次數不足，明天再去！</h5>
+          </div>
+          <div class="ph-feedNum-notEnough display-n">
+            <h5>飼料不足，請至寵物商店購買！</h5>
+          </div>
+        </div>        
+        <div class="ph-other-lightbox">
+          <div class="ph-other-title"></div>
+          <div class="ph-other-box">
+            <h5>將扣除車馬費100愛心幣</h5>
+            <h5>剩餘次數(<span id="ph-times-1"></span>/3)次</h5>
+            <div class="ph-tip-on">確定</div>
+            <div class="ph-tip-off">取消</div>
+          </div>
+        </div>
+        <div class="bg-all-lightbox">
+          <div class="bg-all-title"></div>
+          <div class="bg-all-box">
+            <h5>確認 ( 裝備/卸下 )</h5>
+            <div class="display-n bg-eve-on">裝備</div>
+            <div class="display-n bg-eve-off">卸下</div>
+            <div class="display-n bg-foodBox-on">裝備</div>
+            <div class="display-n bg-foodBox-off">卸下</div>
+            <div class="display-n bg-shitBox-on">裝備</div>
+            <div class="display-n bg-shitBox-off">卸下</div>
+            <div class="display-n bg-shitBu-on">裝備</div>
+            <div class="display-n bg-shitBu-off">卸下</div>
+          </div>
+        </div>
+        <div class="bg-bgc"></div>
+        <div class="bg-item">
+          <div class="bg-title">
+            <span>背包</span>
+            <label for="bagPag-control" class="bg-exit">
+              <span></span>
+              <span></span>
+            </label>
+          </div>
+          <ul class="bg-list-ul">
+            <li class="bg-li-feed">
+              <div>
+                <img src="img/ph-fd-1.png" alt="">
+              </div>
+              <h5><span id="ph-bg-fe-1">飼料</span>-<b>數量:<span id="ph-feedNum-1"></span>個</b></h5>
+              <p>敘述:毛小孩們的糧食</p>
+          
+            </li>
+            <li style="display: none;" class="bg-li-foodBox">
+              <div>
+                <img src="img/ph-fdbox-1.png" alt="">
+              </div>
+              <h5 id="ph-bg-cb-1">高級食盆</h5>
+              <p>敘述:一個大的食盆</p>
+            </li>
+            <li style="display: none;" class="bg-li-shitBox">
+              <div>
+                <img src="img/ph-stbox-1.png" alt="">
+              </div>
+              <h5 id="ph-bg-sb-1">高級屎盆</h5>
+              <p>敘述:實用的貓砂盆</p>
+            </li>
+            <li style="display: none;" class="bg-li-eve">
+              <div>
+                <img src="img/ph-eve.png" alt="">
+              </div>
+              <h5 id="ph-bg-eve-1">寵物衣服</h5>
+              <p>敘述:一件黃色的裙子</p>
+            </li>
+            <li style="display: none;" class="bg-li-shitBu">
+              <div>
+                <img src="img/ph-diaper-1.png" alt="">
+              </div>
+              <h5 id="ph-bg-sp-1">高級尿布</h5>
+              <p>敘述:實用的狗尿布</p>
+            </li>
+            <li style="display: none;" class=""></li>
+          </ul>
+          <div class="bg-sh">
+            <a href="products.html">
+              <div class="bg-sh-cr">
+                <span></span>
+                <span></span>
+              </div>
+            </a>
+            <a href="products.html">去商店購物</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------------------------------- 寵物家 結束 --------------------------------->
+    <!--------------------------------- 寵物家 餵食開始 --------------------------------->
+    <div class="ph-fd-sw ph-check">
+      <div class="ph-all">
+        <div class="ph-bgi">
+          <img src="img/ph-fd-bgi.png" alt="bgi">
+        </div>
+        <div class="pet-img ph-all-style ph-fd-pet ph-pet-upDown">
+          <div id="pet-color-2">
+            <img id="pet-style-2" src="img/ph-cat.png" alt="pet">
+          </div>
+          <div class="ph-clothes ph-all-style">
+            <img src="img/ph-clothes.png" alt="clothes">
+          </div>
+        </div>
+        <div class="ph-fd-box ph-all-style">
+          <img class="ph-fd-before" src="img/foodbox.png" alt="ph-fd-before">
+          <img class="ph-fd-after" src="img/foodbox-full.png" alt="foodbox-full">
+        </div>
+        <div class="ph-coin-num ph-all-style">+250</div>
+        <div class="ph-coin-plus ph-all-style">
+          <img class="coin-plus" src="img/ph-coin-plus.png" alt="ph-coin-plus">
+        </div>
+        <div class="ph-fd ph-all-style">
+          <img src="img/ph-fd-feed.png" alt="ph-fd-feed">
+        </div>
+        <label for="bagPag-control" class="bp-btn">
+          <div class="ph-sd-bp ph-all-style ph-sd">
+            <img src="img/bagpag.png" alt="bagpag">
+          </div>
+        </label>
+        <div class="ph-sd-sp ph-all-style ph-sd">
+          <a href="products.html"><img src="img/shop.png" alt="shop"></a>
+        </div>
+        <div class="ph-sd-oh ph-all-style ph-sd">
+          <img src="img/otherhouse.png" alt="otherhouse">
+        </div>
+        <div class="ph-hs-btn ph-all-style ph-sw-btn">
+          <img src="img/house-off.png" alt="house-on">
+        </div>
+        <div class="ph-fe-btn ph-all-style ph-sw-btn">
+          <img src="img/feed-on.png" alt="feed-off">
+        </div>
+        <div class="ph-sv-btn ph-all-style ph-sw-btn">
+          <img src="img/shovel-off.png" alt="shovel-off">
+        </div>
+        <div class="ph-ac-box">
+          <p>推薦活動 | </p>
+        </div>
+        <div class="ph-ac-hide">
+          <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
+            <ul>
+              <li>
+                <a id="ph-act-date-4" href=" activityContent.html"></a> -- #<a id="ph-act-type-4"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-4"></a> -- View
+                more
+              </li>
+              <li>
+                <a id="ph-act-date-5" href=" activityContent.html"></a> -- #<a id="ph-act-type-5"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-5"></a> -- View
+                more
+              </li>
+              <li>
+                <a id="ph-act-date-6" href=" activityContent.html"></a> -- #<a id="ph-act-type-6"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-6"></a> -- View
+                more
+              </li>
+            </ul>
+          </marquee>
+        </div>
+        <div class="ph-tips-bgc display-n"></div>
+        <div class="ph-tips-lightBox">
+          <div class="ph-tips-exit">
+            <span></span>
+            <span></span>
+          </div>
+          <div class="ph-amount-notEnough display-n">
+            <h5>次數不足，明天再去！</h5>
+          </div>
+          <div class="ph-feedNum-notEnough display-n">
+            <h5>飼料不足，請至寵物商店購買！</h5>
+          </div>
+        </div>
+        <div class="ph-other-lightbox">
+          <div class="ph-other-title"></div>
+          <div class="ph-other-box">
+            <h5>將扣除車馬費100愛心幣</h5>
+            <h5>剩餘次數(<span id="ph-times-2"></span>/3)次</h5>
+            <div class="ph-tip-on">確定</div>
+            <div class="ph-tip-off">取消</div>
+          </div>
+        </div>
+        <div class="bg-all-lightbox">
+          <div class="bg-all-title"></div>
+          <div class="bg-all-box">
+            <h5>確認 ( 裝備/卸下 )</h5>
+            <div class="display-n bg-eve-on">裝備</div>
+            <div class="display-n bg-eve-off">卸下</div>
+            <div class="display-n bg-foodBox-on">裝備</div>
+            <div class="display-n bg-foodBox-off">卸下</div>
+            <div class="display-n bg-shitBox-on">裝備</div>
+            <div class="display-n bg-shitBox-off">卸下</div>
+            <div class="display-n bg-shitBu-on">裝備</div>
+            <div class="display-n bg-shitBu-off">卸下</div>
+          </div>
+        </div>
+        <div class="bg-bgc"></div>
+        <div class="bg-item">
+          <div class="bg-title">
+            <span>背包</span>
+            <label for="bagPag-control" class="bg-exit">
+              <span></span>
+              <span></span>
+            </label>
+          </div>
+          <ul class="bg-list-ul">
+            <li class="bg-li-feed">
+              <div>
+                <img src="img/ph-fd-1.png" alt="">
+              </div>
+              <h5><span id="ph-bg-fe-2">飼料</span>-<b>數量:<span id="ph-feedNum-2"></span>個</b></h5>
+              <p>敘述:毛小孩們的糧食</p>
+          
+            </li>
+            <li style="display: none;" class="bg-li-foodBox">
+              <div>
+                <img src="img/ph-fdbox-1.png" alt="">
+              </div>
+              <h5 id="ph-bg-cb-2">高級食盆</h5>
+              <p>敘述:一個大的食盆</p>
+            </li>
+            <li style="display: none;" class="bg-li-shitBox">
+              <div>
+                <img src="img/ph-stbox-1.png" alt="">
+              </div>
+              <h5 id="ph-bg-sb-2">高級屎盆</h5>
+              <p>敘述:實用的貓砂盆</p>
+            </li>
+            <li style="display: none;" class="bg-li-eve">
+              <div>
+                <img src="img/ph-eve.png" alt="">
+              </div>
+              <h5 id="ph-bg-eve-1">寵物衣服</h5>
+              <p>敘述:一件黃色的裙子</p>
+            </li>
+            <li style="display: none;" class="bg-li-shitBu">
+              <div>
+                <img src="img/ph-diaper-1.png" alt="">
+              </div>
+              <h5 id="ph-bg-sp-2">高級尿布</h5>
+              <p>敘述:實用的狗尿布</p>
+            </li>
+            <li style="display: none;" class=""></li>
+          </ul>
+          <div class="bg-sh">
+            <a href="products.html">
+              <div class="bg-sh-cr">
+                <span></span>
+                <span></span>
+              </div>
+            </a>
+            <a href="products.html">去商店購物</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------------------------------- 寵物家 餵食結束 --------------------------------->
+    <!--------------------------------- 寵物家 鏟屎開始 --------------------------------->
+    <div class="ph-pu-sw ph-check">
+      <div class="ph-all">
+        <div class="ph-bgi">
+          <img src="img/ph-pu-bgi.png" alt="bgi">
+        </div>
+        <div class="pet-img ph-all-style ph-pu-pet ph-pet-upDown">
+          <div id="pet-color-3">
+            <img id="pet-style-3" src="img/ph-cat.png" alt="pet">
+          </div>
+          <div class="ph-clothes ph-all-style">
+            <img src="img/ph-clothes.png" alt="clothes">
+          </div>
+        </div>
+        <div class="ph-st-box ph-all-style">
+          <img class="ph-st-before" src="img/shitbox-full.png" alt="shitbox-full">
+          <img class="ph-st-after" src="img/shitbox.png" alt="shitbox">
+        </div>
+        <div class="ph-coin-num ph-all-style">+500</div>
+        <div class="ph-coin-plus ph-all-style">
+          <img class="coin-plus" src="img/ph-coin-plus.png" alt="ph-coin-plus">
+        </div>
+        <div class="ph-st ph-all-style">
+          <img src="img/ph-shit.png" alt="ph-shit">
+        </div>
+        <label for="bagPag-control" class="bp-btn">
+          <div class="ph-sd-bp ph-all-style ph-sd">
+            <img src="img/bagpag.png" alt="bagpag">
+          </div>
+        </label>
+        <div class="ph-sd-sp ph-all-style ph-sd">
+          <a href="products.html"><img src="img/shop.png" alt="shop"></a>
+        </div>
+        <div class="ph-sd-oh ph-all-style ph-sd">
+          <img src="img/otherhouse.png" alt="otherhouse">
+        </div>
+        <div class="ph-hs-btn ph-all-style ph-sw-btn">
+          <img src="img/house-off.png" alt="house-on">
+        </div>
+        <div class="ph-fe-btn ph-all-style ph-sw-btn">
+          <img src="img/feed-off.png" alt="feed-off">
+        </div>
+        <div class="ph-sv-btn ph-all-style ph-sw-btn">
+          <img src="img/shovel-on.png" alt="shovel-off">
+        </div>
+        <div class="ph-ac-box">
+          <p>推薦活動 | </p>
+        </div>
+        <div class="ph-ac-hide">
+          <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
+            <ul>
+              <li>
+                <a id="ph-act-date-7" href=" activityContent.html"></a> -- #<a id="ph-act-type-7"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-7"></a> -- View
+                more
+              </li>
+              <li>
+                <a id="ph-act-date-8" href=" activityContent.html"></a> -- #<a id="ph-act-type-8"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-8"></a> -- View
+                more
+              </li>
+              <li>
+                <a id="ph-act-date-9" href=" activityContent.html"></a> -- #<a id="ph-act-type-9"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-9"></a> -- View
+                more
+              </li>
+            </ul>
+          </marquee>
+        </div>
+        <div class="ph-tips-bgc display-n"></div>
+        <div class="ph-tips-lightBox">
+          <div class="ph-tips-exit">
+            <span></span>
+            <span></span>
+          </div>
+          <div class="ph-amount-notEnough display-n">
+            <h5>次數不足，明天再去！</h5>
+          </div>
+          <div class="ph-feedNum-notEnough display-n">
+            <h5>飼料不足，請至寵物商店購買！</h5>
+          </div>
+        </div>
+        <div class="ph-other-lightbox">
+          <div class="ph-other-title"></div>
+          <div class="ph-other-box">
+            <h5>將扣除車馬費100愛心幣</h5>
+            <h5>剩餘次數(<span id="ph-times-3"></span>/3)次</h5>
+            <div class="ph-tip-on">確定</div>
+            <div class="ph-tip-off">取消</div>
+          </div>
+        </div>
+        <div class="bg-all-lightbox">
+          <div class="bg-all-title"></div>
+          <div class="bg-all-box">
+            <h5>確認 ( 裝備/卸下 )</h5>
+            <div class="display-n bg-eve-on">裝備</div>
+            <div class="display-n bg-eve-off">卸下</div>
+            <div class="display-n bg-foodBox-on">裝備</div>
+            <div class="display-n bg-foodBox-off">卸下</div>
+            <div class="display-n bg-shitBox-on">裝備</div>
+            <div class="display-n bg-shitBox-off">卸下</div>
+            <div class="display-n bg-shitBu-on">裝備</div>
+            <div class="display-n bg-shitBu-off">卸下</div>
+          </div>
+        </div>
+        <div class="bg-bgc"></div>
+        <div class="bg-item">
+          <div class="bg-title">
+            <span>背包</span>
+            <label for="bagPag-control" class="bg-exit">
+              <span></span>
+              <span></span>
+            </label>
+          </div>
+          <ul class="bg-list-ul">
+            <li class="bg-li-feed">
+              <div>
+                <img src="img/ph-fd-1.png" alt="">
+              </div>
+              <h5><span id="ph-bg-fe-3">飼料</span>-<b>數量:<span id="ph-feedNum-3"></span>個</b></h5>
+              <p>敘述:毛小孩們的糧食</p>
+          
+            </li>
+            <li style="display: none;" class="bg-li-foodBox">
+              <div>
+                <img src="img/ph-fdbox-1.png" alt="">
+              </div>
+              <h5 id="ph-bg-cb-3">高級食盆</h5>
+              <p>敘述:一個大的食盆</p>
+            </li>
+            <li style="display: none;" class="bg-li-shitBox">
+              <div>
+                <img src="img/ph-stbox-1.png" alt="">
+              </div>
+              <h5 id="ph-bg-sb-3">高級屎盆</h5>
+              <p>敘述:實用的貓砂盆</p>
+            </li>
+            <li style="display: none;" class="bg-li-eve">
+              <div>
+                <img src="img/ph-eve.png" alt="">
+              </div>
+              <h5 id="ph-bg-eve-3">寵物衣服</h5>
+              <p>敘述:一件黃色的裙子</p>
+            </li>
+            <li style="display: none;" class="bg-li-shitBu">
+              <div>
+                <img src="img/ph-diaper-1.png" alt="">
+              </div>
+              <h5 id="ph-bg-sp-3">高級尿布</h5>
+              <p>敘述:實用的狗尿布</p>
+            </li>
+            <li style="display: none;" class=""></li>
+          </ul>
+          <div class="bg-sh">
+            <a href="products.html">
+              <div class="bg-sh-cr">
+                <span></span>
+                <span></span>
+              </div>
+            </a>
+            <a href="products.html">去商店購物</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------------------------------- 寵物家 鏟屎結束 --------------------------------->
+    <!--------------------------------- 別人家 開始 --------------------------------->
+    <div class="ph-oh-sw ph-check">
+      <div class="ph-all">
+        <div class="ph-bgi">
+          <img src="img/ph-oh-bgi.png" alt="bgi">
+        </div>
+        <div class="pet-img ph-all-style ph-oh-pet ph-oh-petAni">
+          <div id="pet-color-4">
+            <img id="pet-style-4" src="img/ph-dog.png" alt="pet">
+          </div>
+        </div>
+        <div class="ph-oh-st-box ph-all-style">
+          <img src="img/ph-diaper-1.png" alt="shitbox">
+        </div>
+        <div class="ph-oh-fd-box ph-all-style">
+          <img src="img/ph-fdbox-1.png" alt="foodbox">
+        </div>
+        <div class="ph-hs-btn ph-all-style ph-sw-btn">
+          <img src="img/house-on.png" alt="house-on">
+        </div>
+        <div class="ph-oh-safe ph-all-style">
+          <img class="ph-safe-off" src="img/ph-safe-off.png" alt="safe-off">
+          <img class="ph-safe-on" src="img/ph-safe-on.png" alt="safe-on">
+        </div>
+        <div class="ph-safe-tip ph-all-style">
+          <img src="img/ph-safe-tip.png" alt="">
+        </div>
+        <div class="ph-mem-box ph-mem-box-2">
+          <div class="ph-mem-text">
+            <p id="ph-other-memId"></p>
+            <p>寵物:<span id="ph-other-memName"></span></p>
+            <img src="img/ph-coin.png" alt="coin">
+            <div class="coin">
+              <p style="text-align: center;" id="ph-other-coin"></p>
+            </div>
+          </div>
+        </div>
+        <div class="ph-ac-box">
+          <p>推薦活動 | </p>
+        </div>
+        <div class="ph-ac-hide">
+          <marquee onMouseOver="this.stop()" onMouseOut="this.start()" height="30" direction="up" scrollamount="1">
+            <ul>
+              <li>
+                <a id="ph-act-date-10" href=" activityContent.html"></a> -- #<a id="ph-act-type-10"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-10"></a> -- View
+                more
+              </li>
+              <li>
+                <a id="ph-act-date-11" href=" activityContent.html"></a> -- #<a id="ph-act-type-11"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-11"></a> -- View
+                more
+              </li>
+              <li>
+                <a id="ph-act-date-12" href=" activityContent.html"></a> -- #<a id="ph-act-type-12"
+                  href="activityContent.html"></a> -- <a href=" activityContent.html" id="ph-act-text-12"></a> -- View
+                more
+              </li>
+            </ul>
+          </marquee>
+        </div>
+        <div class="ph-qa-bgc"></div>
+        <div class="ph-qa-box">
+          <div class="ph-qa-title">
+            <span>偷錢關卡</span>
+            <div class="qa-exit">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="ph-qa-topic">
+            <div class="ph-qa-content">
+              <span class="qa-topic" id="ph-qa-text-1"></span>
+            </div>
+            <div class="ph-qa-choose">
+              <span class="qa-right" id="ph-qa-texta-1"></span>
+              <span class="qa-wrong" id="ph-qa-textb-1"></span>
+            </div>
+          </div>
+          <div class="ph-qa-right">
+            <h4>偷竊成功！！！</h4>
+            <img src="img/ph-qa-right.png" alt="">
+            <div>
+              <hr>
+              <p>Ｑ：<span class="qa-topic" id="ph-qa-text-2"></span></p>
+              <p>Ａ：<span class="qa-right" id="ph-qa-texta-2"></span></p>
+              <p id="ph-qa-ans-1"></p>
+            </div>
+          </div>
+          <div class="ph-qa-wrong">
+            <h4>偷竊失敗！！！</h4>
+            <img src="img/ph-qa-wrong.png" alt="">
+            <div>
+              <hr>
+              <p>Ｑ：<span class="qa-topic" id="ph-qa-text-3"></span></p>
+              <p>Ａ：<span class="qa-wrong" id="ph-qa-texta-3"></span></p>
+              <p id="ph-qa-ans-2"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Copyright © 2019 PetKeepers</p>
+    </footer>
+  </div>
+</body>
+
+</html>

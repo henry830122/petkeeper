@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>活動內容--鏟屎官</title>
+  <!-- title的小logo -->
+  <link rel="icon" href="img/petKeepersIcon.ico" type="image/x-icon/">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/header-footer.css"/>
+  <link rel="stylesheet" href="css/activitiesStyle.css">
+  <link rel="stylesheet" href="css/login.css">
+  <!-- TweenMax&ScrollMagic套件 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js"></script>
+  <script src="js/activities-main.js"></script>
+  <script src="js\burger.js"></script>
+</head>
+
+<body>
+  <!-- 登入 -->
+  <div id="login" class="col-md-12" style="display: none;">
+    <!-- loginbox開始 -->
+    <div id="loginbox" class="loginbox col-md-5">
+      <h6>會員登入</h6>
+      <div class="loginpic">
+        <img src="img/logo-01.png" alt="">
+      </div>
+      <div class="login-input">
+        <div>
+          <span>帳號:</span>
+          <input type="text" id="memIdInput" maxlength="10">
+        </div>
+        <div>
+          <span>密碼:</span>
+          <input type="password" id="memPswInput" maxlength="10">
+        </div>
+        <input type="submit" value="送出" id="login-submit">
+        <span id="registeredbtn">還沒申請帳號?</span>
+      </div>
+      <span id="login-close">X</span>
+    </div><!-- loginbox結束 -->
+
+    <!-- registeredbox開始 -->
+    <div id="registeredbox" class="registeredbox col-md-5" style="display: none;">
+      <h6>會員註冊</h6>
+      <div class="login-input">
+        <div>
+          <span>帳號:</span>
+          <input type="text" name="mid" id="memIdValue" maxlength="10">
+        </div>
+        <div>
+          <span>密碼:</span>
+          <input type="password" name="mpsw" id="memPswValue" maxlength="10">
+        </div>
+        <div>
+          <span>姓名:</span>
+          <input type="text" name="mname" id="memNameValue" maxlength="10">
+        </div>
+        <div>
+          <span>暱稱:</span>
+          <input type="text" name="mnick" id="memNickValue" maxlength="10">
+        </div>
+        <div>
+          <span>性別:</span>
+          <div class="registeredsex">
+            <input type="radio" name="sex" value="0" style="width: 20px;" checked>男
+            <input type="radio" name="sex" value="1" style="width: 20px;">女
+          </div>
+        </div>
+        <div>
+          <span>信箱:</span>
+          <input type="text" name="memail" id="memMailValue" maxlength="50">
+        </div>
+        <div>
+          <span>手機:</span>
+          <input type="text" name="mphone" id="memPhoneValue" maxlength="10">
+        </div>
+        <p class="logInAlert">※以上欄位都必須填寫</p>
+        <input type="submit" value="送出" id="registered-submit">
+      </div>
+      <span id="registered-close">X</span>
+    </div><!-- registeredbox結束 -->
+
+  </div><!-- 登入結束 -->
+  <header>
+    <div class="index-logo">
+      <div class="logo">
+        <a href="home.html"><img src="./img/logo.png" alt="" /></a>
+      </div>
+    </div>
+    <div class="menu">
+      <ul class="menu-ul">
+        <li><a id="enterPethouse">寵物當家</a></li>
+        <li><a href="beAPetKeeper.html">成為飼主</a></li>
+        <li><a href="products.html">寵物商店</a></li>
+        <li class="landPage"><a href="activities.html">活動專區</a></li>
+        <div class="login">
+          <div class="login-status">
+            <a id="loginopenbtn">登入</a>
+            <b>|</b>
+            <a id="registeredopenbtn">註冊</a>
+          </div>
+        </div>
+      </ul>
+    </div>
+    <div class="burger">
+      <span class="bar1" id="bar"></span>
+      <span class="bar2" id="bar"></span>
+      <span class="bar3" id="bar"></span>
+    </div>
+  </header>
+
+  <!----------------------- signSuccess ----------------------->
+  <div id="actsSignSuccessLightBox" class="activityContent-sign" style="display: none;">
+    <div class="sign-success">報名成功</div>
+  </div>
+  <div class="wrap">
+    <!----------------------- activityContent-header ----------------------->
+    <div class="activityContent-header embed-responsive">
+      <div class="embed-responsive-item">
+        <!-- header-bgi -->
+        <div class="header-bgi embed-responsive">
+          <img src="img/activities_header-bgi.jpg" class="header embed-responsive-item"></img>
+        </div>
+        <!-- header-banner -->
+        <div class="header-banner px_s">
+          <div id="banner" class="banner">
+            <!-- 串接資料 -->
+            <!-- <img src="img/activities_01_正向行為禮貌養成班.jpg"> -->
+          </div>
+        </div>
+        <!-- header-bannerEnd -->
+      </div>
+    </div>
+    <!-- activityContent-headerEnd -->
+    <!----------------------- activityContent-actInfo ----------------------->
+    <div class="activityContent-actInfo">
+      <div class="actInfo-info px_s">
+        <!-- left -->
+        <div class="left">
+          <!-- 串接資料 -->
+        </div>
+        <!-- leftEnd -->
+        <!-- right -->
+        <div class="right">
+          <div class="signBox">
+            <!-- <p id="thisActNowNum" class="actNowNum">19人已報名<span class="actNum">/25人</span></p>
+            <button id="actSignBtn" class="btn actSign">
+              <p>立即報名</p>
+            </button> -->
+          </div>
+        </div>
+        <!-- rightEnd -->
+      </div>
+      <div id="acts-paws2" class="acts-paws">
+        <!-- paws-trigger -- scrollMagic套件用 -->
+        <div id="paws-trigger" class="paws-trigger"></div>
+        <div class="paw"></div>
+        <div class="paw"></div>
+        <div class="paw"></div>
+        <div class="paw"></div>
+        <div class="paw"></div>
+        <div class="paw"></div>
+      </div>
+    </div>
+    <!----------------------- activityContent-actInfoEnd ----------------------->
+    <footer>
+      <p>Copyright © 2019 PetKeepers</p>
+    </footer>
+  </div>
+  <!-- wrapEnd -->
+</body>
+</html>

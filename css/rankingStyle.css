@@ -1,0 +1,76 @@
+/* 排行榜rankno1~3置中開始 */
+.rankingPet {
+  color: white;
+}
+
+/* h3置中，上下推開 */
+.pageHeader {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+/* rankno1~3置中、置底、平均分配內容元素 */
+.rankCenter {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding-bottom: 50px;
+}
+
+/* rankno1~3浮動P文繞圖 */
+.rankno2_1,
+.rankno1_1,
+.rankno3_1 {
+  float: left;
+  padding-right: 18px;
+}
+
+/* P大小顏色 */
+.rankno2_2 p,
+.rankno1_2 p,
+.rankno3_2 p {
+  font-size: 13pt;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* img的Y軸下移25%到愛心幣上 */
+.rankno2_3,
+.rankno1_3,
+.rankno3_3 {
+  position: relative;
+  transform: translateY(25%);
+}
+
+/* 排行榜rankno1~3置中結束 */
+
+/* 排行榜rankno4~8置中開始 */
+.rankingPets {
+  /* 背景、寬度 */
+  background-color: #eff1f3;
+  width: 100%;
+}
+/* 排行榜rankno4~8置中結束 */
+
+
+/* 排行榜手機RWD開始*/
+@media only screen and (max-width:768px) {
+  .rankingPet{
+    flex-flow: column;
+  }
+  .rankno1,.rankno2,.rankno3{
+    width: 80%;
+    text-align: center;
+  }
+  .rankno2,.rankno3{
+    margin-top: 80px;
+    order: 2;
+  }
+  .rankno1{
+    order: 1;
+  }
+}
+
+/* 排行榜手機RWD結束 */

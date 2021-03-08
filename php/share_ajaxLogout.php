@@ -1,0 +1,14 @@
+<?php
+  session_start();
+  unset($_SESSION["memNo"]);
+  unset($_SESSION["memId"]);
+  unset($_SESSION["memPsw"]);
+  unset($_SESSION["memName"]);
+  unset($_SESSION["memNick"]);
+  unset($_SESSION["memTel"]);
+  unset($_SESSION["sex"]);
+  unset($_SESSION["email"]);
+  unset($_SESSION["coin"]);
+  unset($_SESSION["petName"]);
+  unset($_SESSION["petPic"]);
+?>
